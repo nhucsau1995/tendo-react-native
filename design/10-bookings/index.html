@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tendo - Bookings</title>
+<!-- Fonts: Young Serif & Rubik -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&amp;family=Young+Serif&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 with configuration -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "info-tint": "#F9E0E4",
+            "surface": "#FFFFFF",
+            "warning-tint": "#FAEFE1",
+            "on-secondary-container": "#007059",
+            "on-background": "#291715",
+            "on-secondary-fixed": "#002118",
+            "accent-tint": "#FCDBE0",
+            "text-secondary": "#5A4549",
+            "surface-container-highest": "#fddbd8",
+            "primary-fixed-dim": "#ffb3ad",
+            "control-border": "#B4898B",
+            "surface-variant": "#fddbd8",
+            "divider": "#EADADC",
+            "tertiary-container": "#0069ac",
+            "tertiary-fixed": "#d0e4ff",
+            "secondary-fixed": "#8bf6d4",
+            "secondary-container": "#88f3d1",
+            "surface-tint": "#c0001b",
+            "secondary": "#006b55",
+            "outline-variant": "#e7bdb9",
+            "danger-tint": "#F7E4E4",
+            "text-tertiary": "#7A6468",
+            "amber-star": "#D97706",
+            "on-error-container": "#93000a",
+            "outline": "#926f6b",
+            "warning-text": "#A75906",
+            "surface-container-high": "#ffe2df",
+            "on-surface-variant": "#5d3f3d",
+            "surface-container-low": "#fff0ef",
+            "background": "#FCF4F5",
+            "secondary-fixed-dim": "#6ed9b9",
+            "tertiary-fixed-dim": "#9ccaff",
+            "on-primary-container": "#ffdcd8",
+            "primary-fixed": "#ffdad7",
+            "on-secondary": "#ffffff",
+            "support-strong": "#38A685",
+            "info-text": "#CD001E",
+            "success-tint": "#E3F4E9",
+            "on-tertiary": "#ffffff",
+            "accent-pressed": "#CA001F",
+            "on-error": "#ffffff",
+            "text-primary": "#1F0C0F",
+            "on-primary-fixed": "#410004",
+            "surface-container": "#ffe9e7",
+            "accent-fill": "#CD001E",
+            "on-primary-fixed-variant": "#930012",
+            "inverse-on-surface": "#ffedeb",
+            "danger-text": "#B91C1C",
+            "on-tertiary-fixed": "#001d35",
+            "on-tertiary-container": "#d2e5ff",
+            "inverse-primary": "#ffb3ad",
+            "error-container": "#ffdad6",
+            "on-secondary-fixed-variant": "#00513f",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary-fixed-variant": "#00497b",
+            "on-surface": "#291715",
+            "primary-container": "#cd001e",
+            "success-text": "#0E7C3A",
+            "primary": "#a00015",
+            "inverse-surface": "#402b2a",
+            "surface-bright": "#fff8f7",
+            "on-primary": "#ffffff",
+            "error": "#ba1a1a",
+            "surface-alt": "#F8EAEC",
+            "tertiary": "#005085",
+            "surface-dim": "#f4d2cf"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "2xl": "1.25rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-lg": "1rem",
+            "margin": "1.25rem",
+            "space-md": "0.75rem",
+            "gutter": "1rem",
+            "space-xs": "0.25rem",
+            "space-sm": "0.5rem",
+            "space-2xl": "2rem",
+            "space-xl": "1.5rem"
+          },
+          "fontFamily": {
+            "title": ["Rubik"],
+            "display": ["Young Serif"],
+            "body": ["Rubik"],
+            "label": ["Rubik"],
+            "caption": ["Rubik"]
+          },
+          "fontSize": {
+            "title": [
+              "20px",
+              {
+                "lineHeight": "28px",
+                "fontWeight": "600"
+              }
+            ],
+            "display": [
+              "32px",
+              {
+                "lineHeight": "40px",
+                "letterSpacing": "-0.01em",
+                "fontWeight": "400"
+              }
+            ],
+            "body": [
+              "16px",
+              {
+                "lineHeight": "24px",
+                "fontWeight": "400"
+              }
+            ],
+            "label": [
+              "14px",
+              {
+                "lineHeight": "20px",
+                "fontWeight": "500"
+              }
+            ],
+            "caption": [
+              "13px",
+              {
+                "lineHeight": "18px",
+                "fontWeight": "500"
+              }
+            ]
+          },
+          "boxShadow": {
+            "soft-card": "0 1px 2px rgba(31,12,15,.04), 0 8px 24px rgba(31,12,15,.06)",
+            "tab-active": "0 2px 6px rgba(31,12,15,0.06)"
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .material-symbols-outlined.fill-icon {
+      font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    /* Hide scrollbars for slick app look */
+    body::-webkit-scrollbar {
+      display: none;
+    }
+    body {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-background text-text-primary font-body antialiased min-h-screen flex justify-center selection:bg-accent-tint selection:text-accent-fill">
+<!-- Mobile Viewport Container (393px width fixed standard) -->
+<div class="w-full max-w-[393px] min-h-screen bg-background flex flex-col relative pb-[96px] shadow-2xl">
+<!-- Top Status Bar (iOS standard emulation) -->
+<header class="pt-3 px-6 pb-1 flex justify-between items-center text-text-primary text-[14px] font-semibold tracking-tight select-none">
+<span>9:41</span>
+<div class="flex items-center space-x-1.5 text-text-primary">
+<span class="material-symbols-outlined text-[16px]">signal_cellular_alt</span>
+<span class="material-symbols-outlined text-[16px]">wifi</span>
+<span class="material-symbols-outlined text-[19px]">battery_full</span>
+</div>
+</header>
+<!-- Top App Navigation / Brand Anchor -->
+<section class="flex justify-between items-center w-full px-margin pt-2 pb-3 bg-transparent">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-accent-fill text-[24px]" data-icon="handshake">handshake</span>
+<h1 class="text-title font-title font-bold text-accent-fill dark:text-primary-fixed">Tendo</h1>
+</div>
+<button aria-label="Notifications &amp; Schedule" class="w-10 h-10 rounded-full flex items-center justify-center bg-surface border border-divider text-text-secondary active:scale-95 transition-transform hover:opacity-80 shadow-sm">
+<span class="material-symbols-outlined text-[20px]" data-icon="calendar_today">calendar_today</span>
+</button>
+</section>
+<!-- Screen Title Heading -->
+<div class="px-margin pt-1 pb-4 flex items-baseline justify-between">
+<h2 class="text-display font-display text-text-primary">Bookings</h2>
+<span class="text-caption font-caption text-text-secondary bg-surface-alt px-2.5 py-1 rounded-full border border-divider">3 active</span>
+</div>
+<!-- Segmented Control (Upcoming / Past) -->
+<div class="px-margin mb-6">
+<nav class="h-[44px] bg-surface-alt p-1 rounded-xl flex items-center border border-divider" role="tablist">
+<button aria-selected="true" class="flex-1 h-full bg-surface text-text-primary font-label text-label font-medium rounded-lg shadow-tab-active flex items-center justify-center transition-all duration-200" role="tab">
+          Upcoming
+        </button>
+<button aria-selected="false" class="flex-1 h-full text-text-secondary font-label text-label font-normal flex items-center justify-center transition-all duration-200 hover:text-text-primary" role="tab">
+          Past
+        </button>
+</nav>
+</div>
+<!-- Main Content Area -->
+<main class="px-margin space-y-6 flex-1">
+<!-- SECTION: NEXT BOOKING (Focal Anchor Card) -->
+<section aria-labelledby="next-booking-heading">
+<div class="flex items-center justify-between mb-2.5">
+<h3 class="text-caption font-caption uppercase tracking-wider text-text-tertiary font-semibold" id="next-booking-heading">
+            Next Booking
+          </h3>
+<span class="inline-flex items-center text-[12px] font-medium text-accent-fill gap-0.5">
+<span class="w-1.5 h-1.5 rounded-full bg-accent-fill animate-ping"></span>
+            Today
+          </span>
+</div>
+<!-- Focal Card -->
+<article class="bg-surface rounded-2xl p-5 border border-divider shadow-soft-card relative overflow-hidden transition-all duration-200">
+<!-- Subtle Accent bar left decoration -->
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-accent-fill"></div>
+<!-- Provider Header Info -->
+<div class="flex items-start justify-between pb-4 border-b border-divider/60">
+<div class="flex items-center gap-3">
+<!-- Avatar with active online indicator -->
+<div class="relative w-14 h-14 rounded-full overflow-hidden shrink-0 ring-2 ring-divider/80">
+<img alt="Maria Lopez" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/ALJJyrCMN4i9vf2i63E2Ic02Qfhqlu6tuxMnSS-EYe0onx4Dv8qdh_U-zVhjJtEvmhxHDj4cLxMfDDyIdpNpkLcqQbnH1668bPEk1wUlayudIi-Kayz4qg3K4nD2XEEkLYHn2Jq7Gznsqk-RjLF0KBgNmyAwLH72rzy75AxQQENra9XHGUepP37Y6FbdTQPIlAB5uIqbzYWkY09cKd8pChIWqn9VFfcWmW_534ecpdf2U7YKGczsbnU4RqRYdbknbw"/>
+<span class="absolute bottom-0 right-0 w-3.5 h-3.5 bg-support-strong rounded-full ring-2 ring-surface" title="Online now"></span>
+</div>
+<div>
+<h4 class="text-title font-title text-text-primary text-[18px] leading-tight">Maria Lopez</h4>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="material-symbols-outlined fill-icon text-amber-star text-[16px]" data-icon="star" data-weight="fill">star</span>
+<span class="text-caption font-caption font-semibold text-text-primary">4.9</span>
+<span class="text-caption font-caption text-text-tertiary">(212 reviews)</span>
+</div>
+</div>
+</div>
+<!-- Status Chip -->
+<span class="bg-success-tint text-success-text text-caption font-caption px-2.5 py-1 rounded-full font-medium inline-flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-success-text"></span>
+              Accepted
+            </span>
+</div>
+<!-- Service Specification Grid -->
+<div class="py-3.5 space-y-2.5 text-text-secondary text-label font-label">
+<div class="flex items-center gap-2.5">
+<div class="w-7 h-7 rounded-lg bg-accent-tint flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-accent-fill text-[18px]" data-icon="cleaning_services">cleaning_services</span>
+</div>
+<div class="font-medium text-text-primary flex-1">Deep clean</div>
+<span class="text-caption font-caption font-semibold text-text-primary bg-surface-alt px-2 py-0.5 rounded border border-divider">
+                $119.00 • Paid
+              </span>
+</div>
+<div class="flex items-center gap-2.5">
+<div class="w-7 h-7 rounded-lg bg-surface-alt flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-text-tertiary text-[18px]" data-icon="schedule">schedule</span>
+</div>
+<span class="text-text-primary font-medium">Sat, Nov 14, 10:00 AM</span>
+</div>
+<div class="flex items-center gap-2.5">
+<div class="w-7 h-7 rounded-lg bg-surface-alt flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-text-tertiary text-[18px]" data-icon="location_on">location_on</span>
+</div>
+<span class="text-text-secondary text-[13px] truncate">2145 Valencia St, Apt 3</span>
+</div>
+</div>
+<!-- Quick Action Buttons -->
+<div class="grid grid-cols-2 gap-3 pt-2">
+<!-- Secondary Message Button -->
+<button class="h-[44px] rounded-full bg-surface border-[1.5px] border-control-border text-text-primary font-label text-label font-medium flex items-center justify-center gap-1.5 active:scale-95 transition-transform hover:bg-surface-alt">
+<span class="material-symbols-outlined text-[18px] text-text-secondary" data-icon="chat_bubble">chat_bubble</span>
+              Message
+            </button>
+<!-- Primary Track Button -->
+<button class="h-[44px] rounded-full bg-accent-fill text-surface font-label text-label font-medium flex items-center justify-center gap-1.5 active:scale-95 transition-transform hover:bg-accent-pressed shadow-sm">
+<span class="material-symbols-outlined text-[18px]" data-icon="near_me">near_me</span>
+              Track
+            </button>
+</div>
+</article>
+</section>
+<!-- SECTION: UPCOMING SERVICES (Later this month) -->
+<section aria-labelledby="upcoming-services-heading">
+<div class="flex items-center justify-between mb-2.5">
+<h3 class="text-caption font-caption uppercase tracking-wider text-text-tertiary font-semibold" id="upcoming-services-heading">
+            Later this month
+          </h3>
+<span class="text-caption font-caption text-text-tertiary">2 bookings</span>
+</div>
+<!-- Grouped List Container -->
+<div class="bg-surface rounded-2xl border border-divider shadow-soft-card divide-y divide-divider overflow-hidden">
+<!-- Item 1: James Okafor -->
+<div class="p-4 flex items-center gap-3.5 hover:bg-surface-bright transition-colors cursor-pointer active:bg-surface-alt">
+<div class="relative w-12 h-12 rounded-full overflow-hidden shrink-0 ring-1 ring-divider">
+<img alt="James Okafor" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/ALJJyrDXK_WvLZChHAUVxRqTl_EwCra50zmgeCmXwyEl5oqUVXBvhaFHlDpwVmjl-NHgCCRQRg7Tki0uo__PYlkZzg5bAMq66ljoZ0MQ6ht58PM7MMhFiAu7yXQd0_4vWJjOS7C2HfBGS_lpNQyL23CEea7y3W7ZyXeN8nXGKEEJaMv1C4qG5GepzKWzdoLl-X9l65cHedoVUIkfPuu2WJf_YJyiYo9iMOwQAR8c6hydbj6-nLNEu2ODMEglkgWGdw"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1 mb-0.5">
+<h4 class="font-title text-[15px] font-semibold text-text-primary truncate">James Okafor</h4>
+<span class="bg-warning-tint text-warning-text text-[12px] font-caption px-2 py-0.5 rounded-full font-medium shrink-0">
+                  Requested
+                </span>
+</div>
+<p class="text-caption font-caption text-text-secondary truncate">Leaky sink repair</p>
+<div class="flex items-center justify-between mt-1 text-[12px] text-text-tertiary">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">calendar_month</span>
+                  Tue, Nov 17, 3:00 PM
+                </span>
+<span class="font-medium text-text-primary">$85 est.</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline-variant text-[20px] shrink-0" data-icon="chevron_right">chevron_right</span>
+</div>
+<!-- Item 2: Sofia Rossi -->
+<div class="p-4 flex items-center gap-3.5 hover:bg-surface-bright transition-colors cursor-pointer active:bg-surface-alt">
+<div class="relative w-12 h-12 rounded-full overflow-hidden shrink-0 ring-1 ring-divider">
+<img alt="Sofia Rossi" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/ALJJyrCIvY5I8Bvy8BvKkhySNvbPqu63FySiYHuv4L7o0IaWf89_H6sxesWwRLAM_ZyNC2qm4oZkIUhAg7Qqzn531dYgBMZLV_AhXhrlyjwcpuOyd6d1wcJQGHa_1bSG13IEEw-9jLupmQi9M70xRgK7akbi7ePO9hXYuqzq2NSjREKY8TAZL_2MU9FJR4rf-gcaJ5OEi_zJitWZzgPGKKNSVbHPe5jDzLJXfYKj2so3FJ8qOgk7LXCoR7wjIkxRnA"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1 mb-0.5">
+<h4 class="font-title text-[15px] font-semibold text-text-primary truncate">Sofia Rossi</h4>
+<span class="bg-success-tint text-success-text text-[12px] font-caption px-2 py-0.5 rounded-full font-medium shrink-0">
+                  Accepted
+                </span>
+</div>
+<p class="text-caption font-caption text-text-secondary truncate">Standard clean</p>
+<div class="flex items-center justify-between mt-1 text-[12px] text-text-tertiary">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">calendar_month</span>
+                  Fri, Nov 27, 9:00 AM
+                </span>
+<span class="font-medium text-text-primary">$70 total</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline-variant text-[20px] shrink-0" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+</section>
+<!-- Trust & Support Subtle Banner -->
+<div class="p-3 rounded-xl bg-surface-alt/70 border border-divider/80 flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-accent-tint flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-accent-fill text-[18px]">verified_user</span>
+</div>
+<div class="text-[12px] leading-snug text-text-secondary">
+<span class="font-semibold text-text-primary">Tendo Guarantee:</span> All home services are insured and backed by our happiness pledge.
+        </div>
+</div>
+</main>
+<!-- Bottom Navigation Bar (4-Tab Semantic Architecture) -->
+<nav class="fixed bottom-0 w-full max-w-[393px] bg-surface border-t border-divider px-4 pt-2.5 pb-6 flex justify-around items-center z-50 shadow-lg">
+<!-- Home Tab (Inactive) -->
+<a class="flex flex-col items-center justify-center text-text-secondary hover:opacity-80 transition-opacity duration-200 active:scale-95 group" href="#home">
+<div class="w-10 h-7 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]" data-icon="home">home</span>
+</div>
+<span class="text-[12px] font-label font-medium mt-0.5 text-text-secondary">Home</span>
+</a>
+<!-- Bookings Tab (ACTIVE) -->
+<a aria-current="page" class="flex flex-col items-center justify-center text-accent-fill active:scale-95 group" href="#bookings">
+<!-- Soft #FCDBE0 pill highlight behind active icon -->
+<div class="w-12 h-7 bg-accent-tint rounded-full flex items-center justify-center transition-all">
+<span class="material-symbols-outlined text-[22px] text-accent-fill fill-icon" data-icon="calendar_today" data-weight="fill">calendar_today</span>
+</div>
+<span class="text-[12px] font-label font-semibold mt-0.5 text-accent-fill">Bookings</span>
+</a>
+<!-- Inbox Tab (Inactive) -->
+<a class="flex flex-col items-center justify-center text-text-secondary hover:opacity-80 transition-opacity duration-200 active:scale-95 group" href="#inbox">
+<div class="w-10 h-7 rounded-full flex items-center justify-center relative">
+<span class="material-symbols-outlined text-[24px]" data-icon="chat_bubble">chat_bubble</span>
+<!-- Unread dot badge -->
+<span class="absolute top-1 right-2 w-2 h-2 rounded-full bg-accent-fill"></span>
+</div>
+<span class="text-[12px] font-label font-medium mt-0.5 text-text-secondary">Inbox</span>
+</a>
+<!-- Profile Tab (Inactive) -->
+<a class="flex flex-col items-center justify-center text-text-secondary hover:opacity-80 transition-opacity duration-200 active:scale-95 group" href="#profile">
+<div class="w-10 h-7 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]" data-icon="person">person</span>
+</div>
+<span class="text-[12px] font-label font-medium mt-0.5 text-text-secondary">Profile</span>
+</a>
+</nav>
+</div>
+</body></html>

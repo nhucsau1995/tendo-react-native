@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tendo - Bookings</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&amp;family=Young+Serif&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-bright": "#fff8f7",
+            "amber-star": "#D97706",
+            "surface-container-low": "#fff0ef",
+            "info-tint": "#F9E0E4",
+            "secondary-container": "#88f3d1",
+            "inverse-surface": "#402b2a",
+            "on-primary": "#ffffff",
+            "inverse-on-surface": "#ffedeb",
+            "on-surface": "#291715",
+            "surface": "#FFFFFF",
+            "on-secondary-fixed-variant": "#00513f",
+            "secondary-fixed-dim": "#6ed9b9",
+            "tertiary-fixed": "#d0e4ff",
+            "secondary": "#006b55",
+            "warning-text": "#A75906",
+            "support-strong": "#38A685",
+            "danger-text": "#B91C1C",
+            "divider": "#EADADC",
+            "info-text": "#CD001E",
+            "tertiary-container": "#0069ac",
+            "secondary-fixed": "#8bf6d4",
+            "on-tertiary-container": "#d2e5ff",
+            "on-error": "#ffffff",
+            "warning-tint": "#FAEFE1",
+            "surface-dim": "#f4d2cf",
+            "on-primary-fixed": "#410004",
+            "success-tint": "#E3F4E9",
+            "on-secondary": "#ffffff",
+            "accent-fill": "#CD001E",
+            "tertiary-fixed-dim": "#9ccaff",
+            "on-background": "#291715",
+            "on-error-container": "#93000a",
+            "accent-pressed": "#CA001F",
+            "tertiary": "#005085",
+            "on-secondary-container": "#007059",
+            "on-tertiary-fixed-variant": "#00497b",
+            "background": "#FCF4F5",
+            "success-text": "#0E7C3A",
+            "error": "#ba1a1a",
+            "surface-container": "#ffe9e7",
+            "accent-tint": "#FCDBE0",
+            "on-tertiary": "#ffffff",
+            "on-primary-fixed-variant": "#930012",
+            "surface-variant": "#fddbd8",
+            "primary-fixed": "#ffdad7",
+            "primary-container": "#cd001e",
+            "primary": "#a00015",
+            "control-border": "#B4898B",
+            "on-secondary-fixed": "#002118",
+            "outline-variant": "#e7bdb9",
+            "text-secondary": "#5A4549",
+            "on-surface-variant": "#5d3f3d",
+            "primary-fixed-dim": "#ffb3ad",
+            "text-tertiary": "#7A6468",
+            "surface-alt": "#F8EAEC",
+            "on-tertiary-fixed": "#001d35",
+            "on-primary-container": "#ffdcd8",
+            "surface-container-high": "#ffe2df",
+            "text-primary": "#1F0C0F",
+            "error-container": "#ffdad6",
+            "inverse-primary": "#ffb3ad",
+            "outline": "#926f6b",
+            "surface-container-lowest": "#ffffff",
+            "danger-tint": "#F7E4E4",
+            "surface-tint": "#c0001b",
+            "surface-container-highest": "#fddbd8"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "2xl": "1.25rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-md": "0.75rem",
+            "space-2xl": "2rem",
+            "margin": "1.25rem",
+            "gutter": "1rem",
+            "space-xl": "1.5rem",
+            "space-sm": "0.5rem",
+            "space-lg": "1rem",
+            "space-xs": "0.25rem"
+          },
+          "fontFamily": {
+            "label": ["Rubik", "sans-serif"],
+            "caption": ["Rubik", "sans-serif"],
+            "body": ["Rubik", "sans-serif"],
+            "title": ["Rubik", "sans-serif"],
+            "display": ["Young Serif", "serif"]
+          },
+          "fontSize": {
+            "label": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "caption": ["13px", { "lineHeight": "18px", "fontWeight": "500" }],
+            "body": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "title": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "display": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "400" }]
+          },
+          "boxShadow": {
+            "ambient": "0 1px 2px rgba(31,12,15,.04), 0 8px 24px rgba(31,12,15,.06)",
+            "subtle": "0 2px 8px rgba(31,12,15,.04)"
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    body {
+      -webkit-font-smoothing: antialiased;
+      -webkit-tap-highlight-color: transparent;
+    }
+  </style>
+</head>
+<body class="bg-background min-h-screen flex justify-center items-start selection:bg-accent-tint selection:text-accent-fill text-text-primary">
+<!-- Mobile Frame Container (Strict 393px phone width) -->
+<main class="w-full max-w-[393px] min-h-screen bg-background relative flex flex-col justify-between overflow-x-hidden shadow-2xl">
+<!-- Top App Bar & Safe Area Header -->
+<header class="w-full pt-10 px-margin flex flex-col z-20">
+<!-- TopAppBar Shared Component Executed -->
+<div class="flex justify-between items-center w-full py-2 bg-transparent">
+<!-- Leading: Brand Logo + Handshake Icon -->
+<div class="flex items-center gap-2">
+<div class="w-9 h-9 rounded-full bg-accent-tint flex items-center justify-center text-accent-fill">
+<span class="material-symbols-outlined text-[20px]" data-icon="handshake">handshake</span>
+</div>
+<span class="text-title font-title font-bold text-accent-fill tracking-tight">Tendo</span>
+</div>
+<!-- Trailing: Calendar Action Indicator -->
+<button aria-label="Calendar overview" class="w-10 h-10 rounded-full flex items-center justify-center text-text-secondary hover:opacity-80 active:scale-95 transition-all duration-150" type="button">
+<span class="material-symbols-outlined text-[22px]" data-icon="calendar_month">calendar_month</span>
+</button>
+</div>
+<!-- Screen Title & Segmented Filter Control -->
+<div class="mt-4 mb-2">
+<h1 class="text-display font-display text-text-primary text-[32px] leading-[40px] tracking-tight">Bookings</h1>
+</div>
+<!-- Segmented Control (Pill container) -->
+<div class="w-full p-1 bg-surface-alt rounded-full flex items-center mt-3 shadow-subtle border border-divider/40">
+<button class="flex-1 py-2 rounded-full bg-surface text-text-primary font-title text-[14px] leading-5 font-semibold text-center shadow-sm transition-all duration-150 cursor-pointer" type="button">
+          Upcoming
+        </button>
+<button class="flex-1 py-2 rounded-full text-text-secondary hover:text-text-primary font-title text-[14px] leading-5 font-medium text-center transition-all duration-150 cursor-pointer" type="button">
+          Past
+        </button>
+</div>
+</header>
+<!-- Main Content Canvas (Empty State Focal Presentation) -->
+<section class="flex-1 px-margin flex flex-col items-center justify-center py-6 text-center">
+<!-- Focal Hero Image Card with Tinted Ambient Shadow -->
+<div class="w-full max-w-[280px] aspect-square rounded-2xl overflow-hidden shadow-ambient p-1.5 bg-surface mb-7 border border-surface-container">
+<div class="w-full h-full rounded-[14px] overflow-hidden relative">
+<img alt="Authentic warm candid documentary photograph of a calm, tidy modern apartment entryway hallway with a potted green monstera or fiddle leaf fig plant, clean hardwood floor, a minimalist woven doormat, soft natural daylight streaming in, peaceful welcoming home interior, realistic photography" class="w-full h-full object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsYwTAboWFs7bZ1dMYU0tj64lTRBQ2L6mfcEidkfHXXHeKf0ZAXG24u0cgtaefws8cMFzvxoGXORfc_9am8HqAOalICSarZm3ap0VxYx2XJNdy5jJ3WAYPdZ3rsuino0EpcaZ_BpJME6KKyVK1sksNK9b6FBM1AUvlwv6XtTAOKo98x6qi0A3E9myGaGxCLOOCa3LpJkc5Tsv6htWXEmVrpiylWjin87DsRodWLBftF-fGRWYnKat80IIYqstTJt9nOP56YA5nxAMzew"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none"></div>
+</div>
+</div>
+<!-- Content Typography Group -->
+<div class="max-w-[310px] space-y-2 mb-8">
+<h2 class="text-title font-title font-semibold text-text-primary text-[20px] leading-[28px]">
+          No bookings yet
+        </h2>
+<p class="text-body font-body text-text-secondary text-[16px] leading-[24px]">
+          Your upcoming services will show up here
+        </p>
+</div>
+<!-- Primary Action Button: 56px Pill Button -->
+<button class="w-full max-w-[310px] h-[56px] rounded-full bg-accent-fill hover:bg-accent-pressed active:scale-[0.98] transition-all duration-150 text-white font-label text-label flex items-center justify-center gap-2 shadow-ambient focus:outline-none focus:ring-4 focus:ring-accent-tint" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="search">search</span>
+<span>Find a pro</span>
+</button>
+</section>
+<!-- Bottom Navigation Shell (4 items: Home, Bookings [ACTIVE], Inbox, Profile) -->
+<nav aria-label="Bottom Navigation" class="w-full bg-surface/95 backdrop-blur-md px-margin pt-2.5 pb-7 flex items-center justify-around shadow-[0_-4px_20px_rgba(31,12,15,0.04)]">
+<!-- Home Tab (Inactive) -->
+<button class="flex flex-col items-center gap-1 group py-1 px-3 rounded-xl transition-all duration-150 text-text-secondary hover:text-text-primary" type="button">
+<div class="w-12 h-8 rounded-full flex items-center justify-center transition-all group-active:scale-90">
+<span class="material-symbols-outlined text-[24px]" data-icon="home">home</span>
+</div>
+<span class="text-caption font-caption text-[12px] leading-4 text-text-secondary group-hover:text-text-primary">Home</span>
+</button>
+<!-- Bookings Tab (Active: Highlighted with #FCDBE0 pill & #CD001E icon/text) -->
+<button aria-current="page" class="flex flex-col items-center gap-1 group py-1 px-3 rounded-xl transition-all duration-150 text-accent-fill" type="button">
+<div class="w-12 h-8 rounded-full bg-accent-tint flex items-center justify-center transition-all group-active:scale-90">
+<span class="material-symbols-outlined text-[24px] text-accent-fill font-medium" data-icon="calendar_today" style="font-variation-settings: 'FILL' 1;">calendar_today</span>
+</div>
+<span class="text-caption font-caption text-[12px] leading-4 font-semibold text-accent-fill">Bookings</span>
+</button>
+<!-- Inbox Tab (Inactive) -->
+<button class="flex flex-col items-center gap-1 group py-1 px-3 rounded-xl transition-all duration-150 text-text-secondary hover:text-text-primary" type="button">
+<div class="w-12 h-8 rounded-full flex items-center justify-center transition-all group-active:scale-90">
+<span class="material-symbols-outlined text-[24px]" data-icon="chat_bubble">chat_bubble</span>
+</div>
+<span class="text-caption font-caption text-[12px] leading-4 text-text-secondary group-hover:text-text-primary">Inbox</span>
+</button>
+<!-- Profile Tab (Inactive) -->
+<button class="flex flex-col items-center gap-1 group py-1 px-3 rounded-xl transition-all duration-150 text-text-secondary hover:text-text-primary" type="button">
+<div class="w-12 h-8 rounded-full flex items-center justify-center transition-all group-active:scale-90">
+<span class="material-symbols-outlined text-[24px]" data-icon="person">person</span>
+</div>
+<span class="text-caption font-caption text-[12px] leading-4 text-text-secondary group-hover:text-text-primary">Profile</span>
+</button>
+</nav>
+<!-- iOS Home Indicator Safe Area Bar -->
+<div class="w-full flex justify-center pb-2 bg-surface/95 pointer-events-none">
+<div class="w-32 h-1 bg-text-primary/15 rounded-full"></div>
+</div>
+</main>
+</body></html>

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Chat with Maria Lopez | Tendo</title>
+<!-- Google Fonts: Rubik & Young Serif -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&amp;family=Young+Serif&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "tertiary-container": "#0069ac",
+            "secondary-container": "#88f3d1",
+            "error-container": "#ffdad6",
+            "secondary-fixed": "#8bf6d4",
+            "on-primary": "#ffffff",
+            "inverse-on-surface": "#ffedeb",
+            "accent-tint": "#FCDBE0",
+            "text-primary": "#1F0C0F",
+            "support-strong": "#38A685",
+            "text-secondary": "#5A4549",
+            "on-tertiary-fixed-variant": "#00497b",
+            "info-text": "#CD001E",
+            "inverse-primary": "#ffb3ad",
+            "surface-container-high": "#ffe2df",
+            "surface-alt": "#F8EAEC",
+            "primary": "#a00015",
+            "accent-pressed": "#CA001F",
+            "on-background": "#291715",
+            "warning-text": "#A75906",
+            "surface-variant": "#fddbd8",
+            "control-border": "#B4898B",
+            "danger-tint": "#F7E4E4",
+            "tertiary-fixed-dim": "#9ccaff",
+            "on-tertiary-fixed": "#001d35",
+            "surface-container-low": "#fff0ef",
+            "surface-container": "#ffe9e7",
+            "error": "#ba1a1a",
+            "primary-fixed": "#ffdad7",
+            "secondary-fixed-dim": "#6ed9b9",
+            "on-secondary-fixed-variant": "#00513f",
+            "surface-tint": "#c0001b",
+            "divider": "#EADADC",
+            "outline-variant": "#e7bdb9",
+            "on-secondary": "#ffffff",
+            "secondary": "#006b55",
+            "text-tertiary": "#7A6468",
+            "on-surface": "#291715",
+            "on-tertiary-container": "#d2e5ff",
+            "accent-fill": "#CD001E",
+            "info-tint": "#F9E0E4",
+            "on-primary-fixed-variant": "#930012",
+            "tertiary-fixed": "#d0e4ff",
+            "danger-text": "#B91C1C",
+            "surface-dim": "#f4d2cf",
+            "amber-star": "#D97706",
+            "tertiary": "#005085",
+            "primary-fixed-dim": "#ffb3ad",
+            "primary-container": "#cd001e",
+            "on-surface-variant": "#5d3f3d",
+            "success-text": "#0E7C3A",
+            "outline": "#926f6b",
+            "on-secondary-fixed": "#002118",
+            "surface-container-highest": "#fddbd8",
+            "inverse-surface": "#402b2a",
+            "on-primary-fixed": "#410004",
+            "on-error": "#ffffff",
+            "surface-bright": "#fff8f7",
+            "on-primary-container": "#ffdcd8",
+            "background": "#FCF4F5",
+            "warning-tint": "#FAEFE1",
+            "on-error-container": "#93000a",
+            "surface": "#FFFFFF",
+            "success-tint": "#E3F4E9",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary": "#ffffff",
+            "on-secondary-container": "#007059"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-sm": "0.5rem",
+            "margin": "1.25rem",
+            "space-2xl": "2rem",
+            "gutter": "1rem",
+            "space-xs": "0.25rem",
+            "space-xl": "1.5rem",
+            "space-lg": "1rem",
+            "space-md": "0.75rem"
+          },
+          "fontFamily": {
+            "label": ["Rubik", "sans-serif"],
+            "display": ["Young Serif", "serif"],
+            "caption": ["Rubik", "sans-serif"],
+            "body": ["Rubik", "sans-serif"],
+            "title": ["Rubik", "sans-serif"]
+          },
+          "fontSize": {
+            "label": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "display": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+            "caption": ["13px", { "lineHeight": "18px", "fontWeight": "500" }],
+            "body": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "title": ["20px", { "lineHeight": "28px", "fontWeight": "600" }]
+          },
+          "boxShadow": {
+            "soft-card": "0 1px 2px rgba(31,12,15,.04), 0 8px 24px rgba(31,12,15,.06)"
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    /* Hide scrollbar for clean app experience */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-background text-text-primary font-body antialiased min-h-screen flex justify-center items-center p-0 md:p-6 selection:bg-accent-tint selection:text-accent-fill">
+<!-- Mobile Frame Container (Strict 393px phone canvas mockup) -->
+<main class="w-full max-w-[393px] h-[100dvh] max-h-[852px] bg-background flex flex-col relative shadow-2xl overflow-hidden md:rounded-[40px] border border-divider/50">
+<!-- Top Sticky Shell (Status bar safe area + Header + Pinned banner) -->
+<header class="bg-surface/90 backdrop-blur-md sticky top-0 z-30 flex-none border-b border-divider/40">
+<!-- Status Bar Area (Mock iPhone Dynamic Island / Safe spacing) -->
+<div class="h-11 w-full px-7 flex items-center justify-between text-xs font-semibold text-text-primary tracking-tight select-none">
+<span>9:41</span>
+<div class="flex items-center gap-1.5 text-text-primary">
+<span class="material-symbols-outlined text-[15px]">signal_cellular_4_bar</span>
+<span class="material-symbols-outlined text-[15px]">wifi</span>
+<span class="material-symbols-outlined text-[17px]">battery_full</span>
+</div>
+</div>
+<!-- Main Chat Header -->
+<div class="px-margin pb-3 pt-1 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<!-- Back button -->
+<button aria-label="Go back" class="w-9 h-9 rounded-full flex items-center justify-center text-text-primary hover:bg-surface-alt active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[22px]">arrow_back</span>
+</button>
+<!-- Avatar & Online indicator -->
+<div class="relative flex-shrink-0">
+<img alt="Maria Lopez" class="w-[42px] h-[42px] rounded-full object-cover object-top border-2 border-surface shadow-sm" src="https://lh3.googleusercontent.com/aida/ALJJyrCMN4i9vf2i63E2Ic02Qfhqlu6tuxMnSS-EYe0onx4Dv8qdh_U-zVhjJtEvmhxHDj4cLxMfDDyIdpNpkLcqQbnH1668bPEk1wUlayudIi-Kayz4qg3K4nD2XEEkLYHn2Jq7Gznsqk-RjLF0KBgNmyAwLH72rzy75AxQQENra9XHGUepP37Y6FbdTQPIlAB5uIqbzYWkY09cKd8pChIWqn9VFfcWmW_534ecpdf2U7YKGczsbnU4RqRYdbknbw"/>
+<span class="absolute bottom-0 right-0 w-3 h-3 bg-support-strong border-2 border-surface rounded-full"></span>
+</div>
+<!-- Name & Status -->
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<h1 class="font-title text-[17px] font-semibold text-text-primary leading-tight">Maria Lopez</h1>
+<span class="material-symbols-outlined text-accent-fill text-[16px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-success-text"></span>
+<span class="font-caption text-[12px] text-success-text font-medium leading-none">Online</span>
+</div>
+</div>
+</div>
+<!-- Call Action Button -->
+<button aria-label="Call Maria Lopez" class="w-10 h-10 rounded-full bg-surface-alt hover:bg-accent-tint/60 text-accent-fill flex items-center justify-center border border-divider/60 active:scale-95 transition-transform duration-150 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[20px]">phone</span>
+</button>
+</div>
+<!-- Pinned Booking Banner Pill -->
+<div class="px-margin pb-2.5">
+<div class="bg-surface rounded-2xl p-2.5 px-3.5 shadow-soft-card border border-divider/70 flex items-center justify-between transition-all hover:border-accent-fill/30">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-8 h-8 rounded-full bg-accent-tint flex items-center justify-center text-accent-fill flex-shrink-0">
+<span class="material-symbols-outlined text-[17px]">cleaning_services</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-1 text-[13px] font-medium text-text-primary font-label truncate">
+<span>Deep clean, Sat 10:00 AM</span>
+</div>
+<p class="text-[12px] text-text-tertiary truncate">Confirmed • $140 total</p>
+</div>
+</div>
+<button class="text-accent-fill font-label text-[12px] font-medium flex items-center gap-0.5 hover:opacity-80 active:scale-95 transition-all flex-shrink-0 ml-2" type="button">
+<span>View details</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Message Thread Canvas (Scrollable) -->
+<div class="flex-1 overflow-y-auto px-margin py-4 space-y-4 no-scrollbar">
+<!-- Date Divider Chip -->
+<div class="flex justify-center my-1">
+<span class="px-3 py-1 rounded-full bg-surface-alt text-text-tertiary font-caption text-[12px] tracking-wide border border-divider/40 shadow-xs">
+          Today
+        </span>
+</div>
+<!-- Incoming Message 1 (Maria) -->
+<div class="flex items-end gap-2 max-w-[85%]">
+<img alt="Maria Lopez" class="w-7 h-7 rounded-full object-cover object-top flex-shrink-0 mb-1 border border-surface shadow-xs" src="https://lh3.googleusercontent.com/aida/ALJJyrCMN4i9vf2i63E2Ic02Qfhqlu6tuxMnSS-EYe0onx4Dv8qdh_U-zVhjJtEvmhxHDj4cLxMfDDyIdpNpkLcqQbnH1668bPEk1wUlayudIi-Kayz4qg3K4nD2XEEkLYHn2Jq7Gznsqk-RjLF0KBgNmyAwLH72rzy75AxQQENra9XHGUepP37Y6FbdTQPIlAB5uIqbzYWkY09cKd8pChIWqn9VFfcWmW_534ecpdf2U7YKGczsbnU4RqRYdbknbw"/>
+<div class="flex flex-col items-start">
+<div class="bg-surface text-text-primary px-4 py-2.5 rounded-[18px] rounded-bl-[4px] shadow-soft-card border border-divider/40">
+<p class="font-body text-[14px] leading-relaxed">
+              Hi Emma! I will bring eco-friendly products. Any pets at home?
+            </p>
+</div>
+<span class="font-caption text-[12px] text-text-tertiary mt-1 ml-1.5">9:42 AM</span>
+</div>
+</div>
+<!-- Outgoing Message 1 (Emma) -->
+<div class="flex flex-col items-end max-w-[85%] ml-auto">
+<div class="bg-accent-fill text-on-primary px-4 py-2.5 rounded-[18px] rounded-br-[4px] shadow-sm">
+<p class="font-body text-[14px] leading-relaxed">
+            Yes, one friendly cat named Miso
+          </p>
+</div>
+<div class="flex items-center gap-1 mt-1 mr-1">
+<span class="font-caption text-[12px] text-text-tertiary">9:43 AM</span>
+<span class="material-symbols-outlined text-[13px] text-accent-fill" style="font-variation-settings: 'FILL' 1;">done_all</span>
+</div>
+</div>
+<!-- Incoming Message 2 (Maria) -->
+<div class="flex items-end gap-2 max-w-[85%]">
+<img alt="Maria Lopez" class="w-7 h-7 rounded-full object-cover object-top flex-shrink-0 mb-1 border border-surface shadow-xs" src="https://lh3.googleusercontent.com/aida/ALJJyrCMN4i9vf2i63E2Ic02Qfhqlu6tuxMnSS-EYe0onx4Dv8qdh_U-zVhjJtEvmhxHDj4cLxMfDDyIdpNpkLcqQbnH1668bPEk1wUlayudIi-Kayz4qg3K4nD2XEEkLYHn2Jq7Gznsqk-RjLF0KBgNmyAwLH72rzy75AxQQENra9XHGUepP37Y6FbdTQPIlAB5uIqbzYWkY09cKd8pChIWqn9VFfcWmW_534ecpdf2U7YKGczsbnU4RqRYdbknbw"/>
+<div class="flex flex-col items-start">
+<div class="bg-surface text-text-primary px-4 py-2.5 rounded-[18px] rounded-bl-[4px] shadow-soft-card border border-divider/40">
+<p class="font-body text-[14px] leading-relaxed">
+              No problem. Is street parking OK?
+            </p>
+</div>
+<span class="font-caption text-[12px] text-text-tertiary mt-1 ml-1.5">9:44 AM</span>
+</div>
+</div>
+<!-- Outgoing Message 2 (Emma) -->
+<div class="flex flex-col items-end max-w-[85%] ml-auto">
+<div class="bg-accent-fill text-on-primary px-4 py-2.5 rounded-[18px] rounded-br-[4px] shadow-sm">
+<p class="font-body text-[14px] leading-relaxed">
+            Yes, there is a spot right in front
+          </p>
+</div>
+<div class="flex items-center gap-1 mt-1 mr-1">
+<span class="font-caption text-[12px] text-text-tertiary">9:45 AM</span>
+<span class="material-symbols-outlined text-[13px] text-accent-fill" style="font-variation-settings: 'FILL' 1;">done_all</span>
+</div>
+</div>
+<!-- Incoming Message 3 (Maria) -->
+<div class="flex items-end gap-2 max-w-[85%]">
+<img alt="Maria Lopez" class="w-7 h-7 rounded-full object-cover object-top flex-shrink-0 mb-1 border border-surface shadow-xs" src="https://lh3.googleusercontent.com/aida/ALJJyrCMN4i9vf2i63E2Ic02Qfhqlu6tuxMnSS-EYe0onx4Dv8qdh_U-zVhjJtEvmhxHDj4cLxMfDDyIdpNpkLcqQbnH1668bPEk1wUlayudIi-Kayz4qg3K4nD2XEEkLYHn2Jq7Gznsqk-RjLF0KBgNmyAwLH72rzy75AxQQENra9XHGUepP37Y6FbdTQPIlAB5uIqbzYWkY09cKd8pChIWqn9VFfcWmW_534ecpdf2U7YKGczsbnU4RqRYdbknbw"/>
+<div class="flex flex-col items-start">
+<div class="bg-surface text-text-primary px-4 py-2.5 rounded-[18px] rounded-bl-[4px] shadow-soft-card border border-divider/40">
+<p class="font-body text-[14px] leading-relaxed">
+              Great, see you Saturday at 10
+            </p>
+</div>
+<span class="font-caption text-[12px] text-text-tertiary mt-1 ml-1.5">9:46 AM</span>
+</div>
+</div>
+</div>
+<!-- Bottom Interactive Deck (Quick Replies & Docked Input Bar) -->
+<div class="flex-none bg-surface border-t border-divider/60 pt-2 pb-5 z-20">
+<!-- Focal Quick Reply Chips Row -->
+<div class="px-margin mb-2.5 flex items-center gap-2 overflow-x-auto no-scrollbar py-0.5">
+<button class="h-[34px] px-4 rounded-full bg-accent-tint text-accent-fill font-label text-[13px] font-medium flex items-center justify-center whitespace-nowrap active:scale-95 transition-transform hover:bg-accent-tint/80 border border-accent-fill/10 flex-shrink-0" type="button">
+          Thanks!
+        </button>
+<button class="h-[34px] px-4 rounded-full bg-accent-tint text-accent-fill font-label text-[13px] font-medium flex items-center justify-center whitespace-nowrap active:scale-95 transition-transform hover:bg-accent-tint/80 border border-accent-fill/10 flex-shrink-0" type="button">
+          Running late?
+        </button>
+<button class="h-[34px] px-4 rounded-full bg-accent-tint text-accent-fill font-label text-[13px] font-medium flex items-center justify-center whitespace-nowrap active:scale-95 transition-transform hover:bg-accent-tint/80 border border-accent-fill/10 flex-shrink-0" type="button">
+          Send address
+        </button>
+</div>
+<!-- Docked Input & Action Control Bar -->
+<div class="px-margin flex items-center gap-2">
+<!-- Attachment / Add Action Button -->
+<button aria-label="Attach file or photo" class="w-10 h-10 rounded-full text-text-secondary hover:text-accent-fill hover:bg-surface-alt flex items-center justify-center flex-shrink-0 active:scale-95 transition-colors" type="button">
+<span class="material-symbols-outlined text-[22px]">add_circle</span>
+</button>
+<!-- Message Text Input Container -->
+<div class="flex-1 h-[48px] bg-background rounded-full border border-control-border flex items-center px-4 focus-within:ring-2 focus-within:ring-accent-fill focus-within:border-accent-fill transition-all">
+<input class="w-full bg-transparent border-0 p-0 text-[14px] text-text-primary placeholder:text-text-tertiary focus:ring-0 font-body leading-none outline-none" placeholder="Type a message..." type="text"/>
+<!-- Camera quick button -->
+<button aria-label="Take photo" class="text-text-tertiary hover:text-text-primary ml-1 flex items-center justify-center active:scale-90 transition-transform" type="button">
+<span class="material-symbols-outlined text-[19px]">photo_camera</span>
+</button>
+</div>
+<!-- Send Pill Button -->
+<button aria-label="Send message" class="w-[42px] h-[42px] rounded-full bg-accent-fill text-on-primary flex items-center justify-center shadow-md active:bg-accent-pressed active:scale-95 transition-all flex-shrink-0" type="button">
+<span class="material-symbols-outlined text-[19px] ml-0.5" style="font-variation-settings: 'FILL' 1;">send</span>
+</button>
+</div>
+<!-- System Home Bar Indicator Indicator Area -->
+<div class="w-full flex justify-center pt-3 pb-0.5">
+<div class="w-32 h-1 bg-text-primary/20 rounded-full"></div>
+</div>
+</div>
+</main>
+</body></html>

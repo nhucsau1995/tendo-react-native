@@ -1,0 +1,397 @@
+{
+  "title": "Tendo",
+  "slug": "tendo",
+  "domain": "ecommerce",
+  "style": "bright",
+  "allow3D": false,
+  "features": [
+    "Customer onboarding with role choice (book a service or offer services) and phone sign-up",
+    "Browse home service categories (cleaning, plumbing, electrical, handyman, moving, beauty) and search",
+    "Provider list with rating, price per hour, distance and availability, filter chips",
+    "Provider profile with verified badge, services and prices, portfolio photos and reviews",
+    "Book a service: pick service package, date, time slot, address and notes",
+    "Checkout with price breakdown, service fee, saved card (payment simulated)",
+    "Live booking status timeline: requested, accepted, on the way, in progress, completed (simulated)",
+    "In-app chat between customer and provider (mock thread, quick replies)",
+    "Bookings list with upcoming and past tabs, plus empty state",
+    "Rate and review the provider after the job",
+    "Inbox of conversations",
+    "Profile with addresses, payment methods, notifications and a switch to provider mode",
+    "Provider mode dashboard: incoming job requests to accept or decline, today's earnings (simulated other side)"
+  ],
+  "bannedTerms": [
+    "crypto",
+    "insurance claim",
+    "guaranteed",
+    "background check",
+    "subscription",
+    "premium"
+  ],
+  "screenCount": 15,
+  "sharedComponents": {
+    "bottomTabBar": {
+      "tabs": [
+        "Home",
+        "Bookings",
+        "Inbox",
+        "Profile"
+      ],
+      "icons": [
+        "home",
+        "calendar",
+        "message-circle",
+        "user"
+      ],
+      "note": "Flat white bar, 1px top border, no gradient. Active tab: icon + label in accentFill with a small accentTint pill behind the icon; inactive: text.secondary."
+    },
+    "statusBar": "Header on tab screens: screen title (or greeting) on the left in display style, round avatar or bell icon button on the right.",
+    "controls": "Primary button: pill, 56px tall, accentFill with white label (pressed darker, disabled 40% opacity). Secondary button: pill, white with 1.5px borderStrong border, ink label. Text input: 12px radius, 52px, white, borderStrong border, focus = 2px accentFill ring, error = danger border + 13px helper. Card: white, 20px radius, soft shadow. Chip: pill, 32px, accentTint fill with accentFill text, 13px; selected chip = accentFill fill with white text. Rating: small star icon in warning amber + number."
+  },
+  "screens": [
+    {
+      "name": "welcome",
+      "purpose": "First launch: what the app does and a start button",
+      "content": "Full-bleed real photo hero of a smiling professional house cleaner in a bright living room handing a client a tablet, soft daylight; logo mark + app name Tendo; headline 'Trusted help at home, in a few taps'; subline 'Book vetted local pros for cleaning, repairs and more'; 3 small proof chips '4.8 average rating', '2,400+ pros', 'Same-day slots'; primary button 'Get started'; text button 'I already have an account'",
+      "group": "onboarding",
+      "nav": "none",
+      "states": [
+        "default"
+      ]
+    },
+    {
+      "name": "sign-up",
+      "purpose": "Pick a role and sign up with a phone number",
+      "content": "Title 'Create your account'; two large selectable role cards side by side: 'I need a service' (selected, accent ring, house icon) and 'I offer services' (wrench icon); inputs: full name 'Emma Carter', phone '+1 (415) 555-0142', email 'emma.carter@mail.com'; helper 'We will text you a 6-digit code'; primary 'Continue'; footnote 'By continuing you accept the Terms and Privacy Policy'",
+      "group": "onboarding",
+      "nav": "none",
+      "states": [
+        "default"
+      ]
+    },
+    {
+      "name": "home",
+      "purpose": "Discover services and start a booking",
+      "content": "Header 'Hi Emma' with location row 'Mission District, San Francisco' and bell button; search field 'What do you need help with?'; FOCAL hero gradient promo card 'Spring deep clean' '20% off your first booking' with white pill 'Book now' and a real photo of cleaning supplies on the right; section 'Categories' 3x2 grid of tiles with icons: Cleaning, Plumbing, Electrical, Handyman, Moving, Beauty; section 'Top rated near you' horizontal cards with real photo portraits: 'Maria Lopez, House cleaning, 4.9 (212), $35/hr', 'James Okafor, Plumber, 4.8 (168), $55/hr'; upcoming booking strip 'Deep clean, Sat 10:00 AM, Accepted'",
+      "group": "core",
+      "nav": "Home",
+      "states": [
+        "default"
+      ]
+    },
+    {
+      "name": "search-results",
+      "purpose": "Compare providers for one category",
+      "content": "Back arrow + title 'House cleaning' + count '48 pros nearby'; filter chips row: 'Available today' (selected), 'Top rated', 'Under $40/hr', 'Eco products'; sort row 'Sort: Recommended'; FOCAL first card highlighted 'Best match': real photo portrait of Maria Lopez, verified badge, rating 4.9 (212 reviews), '$35/hr', '1.2 mi', 'Next slot today 2:00 PM', button 'View'; 3 more provider rows with real photo avatars: 'Aisha Rahman 4.8 (95) $32/hr 2.0 mi', 'Daniel Kim 4.7 (64) $30/hr 3.4 mi', 'Sofia Rossi 4.9 (130) $40/hr 0.8 mi'",
+      "group": "core",
+      "nav": "Home",
+      "states": [
+        "default"
+      ]
+    },
+    {
+      "name": "provider-profile",
+      "purpose": "Check a provider before booking",
+      "content": "Large real photo cover of a tidy bright kitchen, back and share buttons over it; overlapping round real photo portrait of Maria Lopez, name, 'House cleaning, 6 years', verified badge 'ID verified'; FOCAL stats row: '4.9 rating', '212 jobs', '98% on time'; section 'Services' rows: 'Standard clean, 2 hrs, $70', 'Deep clean, 4 hrs, $140', 'Move-out clean, 5 hrs, $175'; section 'Recent work' 3 real photos (clean bathroom, living room, oven); review card 'Olivia P. 5 stars: Spotless and right on time.'; sticky bottom bar 'From $35/hr' + primary 'Book Maria'",
+      "group": "detail",
+      "nav": "none",
+      "states": [
+        "default"
+      ]
+    },
+    {
+      "name": "book-service",
+      "purpose": "Choose package, date, time and address",
+      "content": "Back + title 'Book a service' + step '1 of 2'; provider mini row Maria Lopez with avatar; package segmented cards: 'Standard 2 hrs $70', 'Deep 4 hrs $140' (selected), 'Move-out 5 hrs $175'; FOCAL date strip of 7 day pills 'Thu 12 ... Wed 18' with 'Sat 14' selected; time slot chips grid '8:00 AM', '10:00 AM' (selected), '12:00 PM', '2:00 PM', '4:00 PM' (one disabled 'Full'); address card '2145 Valencia St, Apt 3, San Francisco' with 'Change'; notes input 'Please focus on kitchen and bathroom'; primary 'Continue to checkout'",
+      "group": "core",
+      "nav": "none",
+      "states": [
+        "default"
+      ]
+    },
+    {
+      "name": "checkout",
+      "purpose": "Review price and confirm the booking",
+      "content": "Back + title 'Checkout' + step '2 of 2'; summary card: Maria Lopez avatar, 'Deep clean, 4 hrs', 'Sat, Nov 14, 10:00 AM', '2145 Valencia St'; FOCAL total block: 'Deep clean $140.00', 'Service fee $7.00', 'Promo SPRING20 -$28.00' in success color, divider, 'Total $119.00' large; payment row 'Visa ending 4242' with 'Change'; info note 'You are charged only after the job is completed'; primary 'Confirm booking'",
+      "group": "core",
+      "nav": "none",
+      "states": [
+        "default"
+      ]
+    },
+    {
+      "name": "booking-tracking",
+      "purpose": "Follow the booking status live",
+      "content": "Back + title 'Booking #TD-20481'; FOCAL status card with gradient: 'Maria is on the way', 'Arrives in about 12 min', small real photo portrait; vertical status timeline: 'Requested 9:02 AM' done, 'Accepted 9:05 AM' done, 'On the way 9:41 AM' current (accent), 'In progress' pending, 'Completed' pending; details card 'Deep clean, Sat Nov 14, 10:00 AM, $119.00'; two buttons 'Message' (secondary) and 'Call' (secondary); text button 'Cancel booking' in danger color",
+      "group": "detail",
+      "nav": "none",
+      "states": [
+        "default"
+      ]
+    },
+    {
+      "name": "chat",
+      "purpose": "Talk with the provider",
+      "content": "Header: back, real photo avatar Maria Lopez, 'Online', call icon; booking pill 'Deep clean, Sat 10:00 AM'; message thread: Maria 'Hi Emma! I will bring eco-friendly products. Any pets at home?', Emma 'Yes, one friendly cat named Miso', Maria 'No problem. Is street parking OK?', Emma 'Yes, there is a spot right in front', Maria 'Great, see you Saturday at 10'; FOCAL quick reply chips 'Thanks!', 'Running late?', 'Send address'; input bar 'Type a message' with send button in accentFill",
+      "group": "detail",
+      "nav": "none",
+      "states": [
+        "default"
+      ]
+    },
+    {
+      "name": "bookings",
+      "purpose": "See upcoming and past bookings",
+      "content": "Title 'Bookings'; segmented control 'Upcoming' (selected) / 'Past'; FOCAL next booking card: real photo portrait Maria Lopez, 'Deep clean', 'Sat, Nov 14, 10:00 AM', status chip 'Accepted', buttons 'Track' and 'Message'; more rows: 'James Okafor, Leaky sink repair, Tue Nov 17, 3:00 PM, Requested' (warning chip), 'Sofia Rossi, Standard clean, Fri Nov 27, 9:00 AM, Accepted'",
+      "group": "core",
+      "nav": "Bookings",
+      "states": [
+        "default",
+        "empty"
+      ]
+    },
+    {
+      "name": "bookings-empty",
+      "purpose": "Bookings list before the first booking",
+      "content": "Title 'Bookings'; segmented 'Upcoming' / 'Past'; FOCAL real photo of a calm tidy entryway with a plant and a doormat; text 'No bookings yet'; caption 'Your upcoming services will show up here'; primary 'Find a pro'",
+      "group": "core",
+      "nav": "Bookings",
+      "states": [
+        "empty"
+      ]
+    },
+    {
+      "name": "rate-review",
+      "purpose": "Rate the provider after the job",
+      "content": "Close button; real photo portrait of Maria Lopez; 'How was your deep clean?'; 'Sat, Nov 14, completed 2:04 PM'; FOCAL big 5-star row with 5 stars filled in warning amber; tag chips 'On time' (selected), 'Thorough' (selected), 'Friendly', 'Great value'; text area 'Maria did an amazing job, the kitchen looks brand new.'; tip row chips '$5', '$10' (selected), '$15', 'Custom'; primary 'Submit review'",
+      "group": "detail",
+      "nav": "none",
+      "states": [
+        "default"
+      ]
+    },
+    {
+      "name": "inbox",
+      "purpose": "All conversations with providers",
+      "content": "Title 'Inbox'; search field 'Search messages'; FOCAL first row unread with accent dot: real photo avatar Maria Lopez 'Great, see you Saturday at 10' '9:48 AM' unread badge 2; rows: 'James Okafor, I can come Tuesday after 3', 'Yesterday'; 'Sofia Rossi, Thanks for booking again!', 'Mon'; 'Tendo Support, Your promo SPRING20 is active', 'Nov 2'",
+      "group": "core",
+      "nav": "Inbox",
+      "states": [
+        "default"
+      ]
+    },
+    {
+      "name": "profile",
+      "purpose": "Account settings and switch to provider mode",
+      "content": "Title 'Profile'; real photo portrait Emma Carter, 'emma.carter@mail.com', 'Member since 2024'; FOCAL gradient card 'Earn with Tendo' 'Switch to provider mode to accept jobs' with white pill 'Switch to provider'; settings list rows with icons: 'Saved addresses (2)', 'Payment methods, Visa 4242', 'Notifications', 'Promo codes', 'Help center', 'Log out' in danger color",
+      "group": "settings",
+      "nav": "Profile",
+      "states": [
+        "default"
+      ]
+    },
+    {
+      "name": "provider-dashboard",
+      "purpose": "Provider side: accept new job requests and see earnings",
+      "content": "Header 'Provider mode' with toggle 'Online' on (success), back to customer text button 'Switch to customer'; FOCAL earnings card with gradient 'This week $1,284.50', '18 jobs, 4.9 rating'; section 'New requests (2)': card 'Emma Carter, Deep clean, Sat Nov 14, 10:00 AM, 1.2 mi, $140' with buttons 'Decline' (secondary) and 'Accept' (primary); card 'Noah Bennett, Standard clean, Sun Nov 15, 1:00 PM, 2.6 mi, $70'; section 'Today' row 'Liam Chen, Move-out clean, 3:00 PM'; no bottom tab bar",
+      "group": "settings",
+      "nav": "none",
+      "states": [
+        "default"
+      ]
+    }
+  ],
+  "designSystem": {
+    "variant": "P03",
+    "variantName": "pin crimson",
+    "theme": "light",
+    "frame": "393x852 mobile (iPhone 16/17), top inset 59px, bottom inset 34px",
+    "color": {
+      "background": "#FCF4F5",
+      "surface": "#FFFFFF",
+      "surfaceAlt": "#F8EAEC",
+      "accent": "#E60023",
+      "accentFill": "#CD001E",
+      "accentTint": "#FCDBE0",
+      "accentPressed": "#CA001F",
+      "support": "#5CC8A8",
+      "text": {
+        "primary": "#1F0C0F",
+        "secondary": "#5A4549",
+        "tertiary": "#7A6468"
+      },
+      "border": "#EADADC",
+      "success": "#16A34A",
+      "warning": "#D97706",
+      "danger": "#B91C1C",
+      "gradient": [
+        "#CD001E",
+        "#CA001F"
+      ],
+      "statusOn": {
+        "warning": {
+          "fg": "#A75906",
+          "tint": "#FAEFE1"
+        },
+        "success": {
+          "fg": "#0E7C3A",
+          "tint": "#E3F4E9"
+        },
+        "danger": {
+          "fg": "#B91C1C",
+          "tint": "#F7E4E4"
+        },
+        "info": {
+          "fg": "#CD001E",
+          "tint": "#F9E0E4"
+        }
+      },
+      "supportStrong": "#38A685",
+      "borderStrong": "#B4898B"
+    },
+    "type": {
+      "fontFamily": "Rubik",
+      "displayFamily": "Young Serif",
+      "numeralFamily": "Rubik",
+      "display": "32 / 400 Young Serif / -0.01em",
+      "title": "20 / 600",
+      "body": "16 / 400",
+      "label": "14 / 500",
+      "caption": "13 / 500",
+      "minSize": "12px (13px chips and tags, 14px safety or legal text)",
+      "scaleRule": "Use only the 5 declared sizes (display, title, body, label, caption)."
+    },
+    "radius": {
+      "card": 20,
+      "control": 14,
+      "input": 12,
+      "pill": 999
+    },
+    "spacing": "8pt scale (4, 8, 12, 16, 24, 32); screen edge padding 20px",
+    "elevation": "card = 0 1px 2px rgba(31,12,15,.04) + 0 8px 24px rgba(31,12,15,.06)",
+    "icons": "Lucide-style rounded outline, 24px, 1.75 stroke",
+    "a11y": "white labels on accentFill only; text on gradients >= 4.5:1; tap targets >= 44pt"
+  },
+  "tokenCheck": {
+    "results": [
+      {
+        "pair": "text.primary on background",
+        "ratio": 17.35,
+        "target": 4.5,
+        "pass": true,
+        "fixedTo": null,
+        "after": null
+      },
+      {
+        "pair": "text.primary on surface",
+        "ratio": 18.79,
+        "target": 4.5,
+        "pass": true,
+        "fixedTo": null,
+        "after": null
+      },
+      {
+        "pair": "text.secondary on background",
+        "ratio": 8.14,
+        "target": 4.5,
+        "pass": true,
+        "fixedTo": null,
+        "after": null
+      },
+      {
+        "pair": "text.secondary on surface",
+        "ratio": 8.82,
+        "target": 4.5,
+        "pass": true,
+        "fixedTo": null,
+        "after": null
+      },
+      {
+        "pair": "text.tertiary on background",
+        "ratio": 5.04,
+        "target": 4.5,
+        "pass": true,
+        "fixedTo": null,
+        "after": null
+      },
+      {
+        "pair": "text.tertiary on surface",
+        "ratio": 5.45,
+        "target": 4.5,
+        "pass": true,
+        "fixedTo": null,
+        "after": null
+      },
+      {
+        "pair": "white label on accentFill (buttons)",
+        "ratio": 4.78,
+        "target": 4.5,
+        "pass": true,
+        "fixedTo": null,
+        "after": null
+      },
+      {
+        "pair": "accentFill text on accentTint (chips, selected)",
+        "ratio": 3.72,
+        "target": 4.5,
+        "pass": false,
+        "fixedTo": "#CD001E",
+        "after": 4.52
+      },
+      {
+        "pair": "accentFill as link text on background",
+        "ratio": 5.37,
+        "target": 4.5,
+        "pass": true,
+        "fixedTo": null,
+        "after": null
+      },
+      {
+        "pair": "white on hero gradient (both stops)",
+        "ratio": 5.81,
+        "target": 4.5,
+        "pass": true,
+        "fixedTo": null,
+        "after": null
+      },
+      {
+        "pair": "warning text on its tint and on surface",
+        "ratio": 2.81,
+        "target": 4.5,
+        "pass": false,
+        "fixedTo": "#A75906",
+        "after": 4.54
+      },
+      {
+        "pair": "success text on its tint and on surface",
+        "ratio": 2.89,
+        "target": 4.5,
+        "pass": false,
+        "fixedTo": "#0E7C3A",
+        "after": 4.64
+      },
+      {
+        "pair": "support as chart line / icon on surface (non-text 3:1)",
+        "ratio": 2.04,
+        "target": 3.0,
+        "pass": false,
+        "fixedTo": "#38A685",
+        "after": 3.02
+      },
+      {
+        "pair": "input / control border on surface (non-text 3:1)",
+        "ratio": 1.35,
+        "target": 3.0,
+        "pass": false,
+        "fixedTo": "#B4898B",
+        "after": 3.05
+      }
+    ],
+    "changed": {
+      "accentFill": {
+        "from": "#E60023",
+        "to": "#CD001E"
+      }
+    },
+    "passed": true
+  }
+}

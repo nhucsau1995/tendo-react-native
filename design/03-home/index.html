@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=393, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Tendo - Home Services</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&amp;family=Young+Serif&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-secondary-container": "#007059",
+            "on-secondary-fixed": "#002118",
+            "primary-fixed": "#ffdad7",
+            "success-text": "#0E7C3A",
+            "on-background": "#291715",
+            "on-secondary": "#ffffff",
+            "text-secondary": "#5A4549",
+            "on-tertiary-container": "#d2e5ff",
+            "primary": "#a00015",
+            "danger-tint": "#F7E4E4",
+            "surface-bright": "#fff8f7",
+            "error": "#ba1a1a",
+            "support-strong": "#38A685",
+            "secondary": "#006b55",
+            "tertiary-container": "#0069ac",
+            "surface-container-low": "#fff0ef",
+            "surface-container-highest": "#fddbd8",
+            "on-tertiary-fixed-variant": "#00497b",
+            "tertiary-fixed": "#d0e4ff",
+            "background": "#FCF4F5",
+            "on-surface": "#291715",
+            "surface-container": "#ffe9e7",
+            "accent-tint": "#FCDBE0",
+            "warning-tint": "#FAEFE1",
+            "outline-variant": "#e7bdb9",
+            "info-text": "#CD001E",
+            "accent-pressed": "#CA001F",
+            "accent-fill": "#CD001E",
+            "on-primary-fixed-variant": "#930012",
+            "inverse-surface": "#402b2a",
+            "inverse-on-surface": "#ffedeb",
+            "on-primary": "#ffffff",
+            "secondary-fixed": "#8bf6d4",
+            "control-border": "#B4898B",
+            "surface-dim": "#f4d2cf",
+            "success-tint": "#E3F4E9",
+            "primary-fixed-dim": "#ffb3ad",
+            "info-tint": "#F9E0E4",
+            "surface-container-high": "#ffe2df",
+            "error-container": "#ffdad6",
+            "text-tertiary": "#7A6468",
+            "surface-tint": "#c0001b",
+            "on-tertiary": "#ffffff",
+            "on-primary-container": "#ffdcd8",
+            "danger-text": "#B91C1C",
+            "on-surface-variant": "#5d3f3d",
+            "text-primary": "#1F0C0F",
+            "outline": "#926f6b",
+            "surface-variant": "#fddbd8",
+            "on-error": "#ffffff",
+            "tertiary-fixed-dim": "#9ccaff",
+            "tertiary": "#005085",
+            "surface": "#FFFFFF",
+            "primary-container": "#cd001e",
+            "on-tertiary-fixed": "#001d35",
+            "divider": "#EADADC",
+            "on-primary-fixed": "#410004",
+            "warning-text": "#A75906",
+            "on-secondary-fixed-variant": "#00513f",
+            "inverse-primary": "#ffb3ad",
+            "secondary-fixed-dim": "#6ed9b9",
+            "on-error-container": "#93000a",
+            "amber-star": "#D97706",
+            "surface-container-lowest": "#ffffff",
+            "surface-alt": "#F8EAEC",
+            "secondary-container": "#88f3d1"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "2xl": "1.25rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-md": "0.75rem",
+            "space-xl": "1.5rem",
+            "space-sm": "0.5rem",
+            "space-lg": "1rem",
+            "margin": "1.25rem",
+            "space-2xl": "2rem",
+            "space-xs": "0.25rem",
+            "gutter": "1rem"
+          },
+          "fontFamily": {
+            "display": ["Young Serif", "serif"],
+            "body": ["Rubik", "sans-serif"],
+            "caption": ["Rubik", "sans-serif"],
+            "title": ["Rubik", "sans-serif"],
+            "label": ["Rubik", "sans-serif"]
+          },
+          "fontSize": {
+            "display": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+            "body": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "caption": ["13px", { "lineHeight": "18px", "fontWeight": "500" }],
+            "title": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "label": ["14px", { "lineHeight": "20px", "fontWeight": "500" }]
+          },
+          "boxShadow": {
+            "ambient": "0 1px 3px rgba(31, 12, 15, 0.04), 0 8px 24px rgba(31, 12, 15, 0.06)",
+            "ambient-sm": "0 1px 2px rgba(31, 12, 15, 0.03), 0 4px 12px rgba(31, 12, 15, 0.04)"
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .material-symbols-outlined.fill {
+      font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    /* Hide scrollbar for clean horizontal snap rail */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-background text-text-primary font-body antialiased min-h-screen flex justify-center selection:bg-accent-tint selection:text-accent-fill">
+<!-- Mobile Frame Container -->
+<main class="w-full max-w-[393px] bg-background min-h-screen relative flex flex-col pb-28">
+<!-- Top App Bar / Shell Brand Header (FromJson anchor) -->
+<header class="flex justify-between items-center w-full px-margin pt-4 pb-2">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-accent-fill text-[24px]">handshake</span>
+<span class="font-title text-title font-bold text-accent-fill tracking-tight">Tendo</span>
+</div>
+<button class="text-label font-label text-text-secondary hover:opacity-80 transition-opacity duration-200">
+        Skip
+      </button>
+</header>
+<!-- Main Content Canvas -->
+<div class="px-margin flex flex-col gap-5 pt-1">
+<!-- Greeting & Location row -->
+<section class="flex items-center justify-between">
+<div>
+<h1 class="font-display text-display text-text-primary tracking-tight">Hi Emma</h1>
+<button class="flex items-center gap-1 mt-0.5 group active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined text-accent-fill text-[16px]">location_on</span>
+<span class="font-caption text-caption text-text-secondary group-hover:text-text-primary transition-colors">Mission District, San Francisco</span>
+<span class="material-symbols-outlined text-text-secondary text-[16px]">expand_more</span>
+</button>
+</div>
+<!-- Notification Bell Icon Button -->
+<button class="w-11 h-11 rounded-full bg-surface shadow-ambient-sm flex items-center justify-center relative active:scale-95 transition-transform hover:opacity-90">
+<span class="material-symbols-outlined text-text-primary text-[22px]">notifications</span>
+<span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-accent-fill ring-2 ring-surface"></span>
+</button>
+</section>
+<!-- Search Bar -->
+<div class="relative w-full">
+<div class="h-[52px] bg-surface rounded-xl border border-control-border flex items-center px-4 gap-3 shadow-ambient-sm focus-within:ring-2 focus-within:ring-accent-fill focus-within:border-transparent transition-all">
+<span class="material-symbols-outlined text-text-tertiary text-[20px]">search</span>
+<input class="w-full bg-transparent border-0 p-0 font-body text-[15px] text-text-primary placeholder:text-text-tertiary focus:ring-0 focus:outline-none" placeholder="What do you need help with?" type="text"/>
+<button class="p-1 rounded-lg text-text-tertiary hover:text-text-primary transition-colors flex items-center">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+</button>
+</div>
+</div>
+<!-- Focal Hero Card -->
+<section class="relative overflow-hidden rounded-[20px] bg-gradient-to-br from-accent-fill to-accent-pressed p-5 text-on-primary shadow-ambient flex flex-col justify-between min-h-[178px]">
+<!-- Clipped Real Photography Asset -->
+<div class="absolute right-0 top-0 bottom-0 w-2/5 overflow-hidden pointer-events-none">
+<img alt="Eco-friendly cleaning supplies in a natural woven wicker basket on a clean bright kitchen counter" class="w-full h-full object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5gR4jVN_niKq6ztCKdtWdpiaooaVz3oz2svcinUcDESmycxdE3RkX9VXJmXCy1nACKuslfpJhF6hjUv5x4YJG2GYAC3CE9qQMDurcWmG8LFH6jGAEEMn79FMMlqT0BI3BQ8bhj8fsdIhMGg-QN2JZN0kM9ipt8r9MuAJkqE2PwsG8lb9tpL8XlI4TxJRVmlL_XU_Ruq8-h3m0rnHT4JCkHsRYk3KY6M_RWwd9i3JaOJpAAe_vaN03Fsy40US82QrersE82V8NOn3gSg"/>
+<!-- Gentle soft gradient overlay to merge photo into crimson -->
+<div class="absolute inset-0 bg-gradient-to-r from-accent-fill via-transparent to-transparent"></div>
+</div>
+<!-- Hero Content -->
+<div class="relative z-10 max-w-[62%] flex flex-col items-start gap-1">
+<span class="inline-block px-2.5 py-0.5 rounded-full bg-white/20 backdrop-blur-sm text-[12px] font-label font-medium uppercase tracking-wider text-white">
+            Limited offer
+          </span>
+<h2 class="font-display text-[26px] leading-[30px] tracking-tight text-white mt-1">
+            Spring deep clean
+          </h2>
+<p class="font-label text-label text-white/90">
+            20% off your first booking
+          </p>
+</div>
+<div class="relative z-10 pt-3">
+<button class="h-10 px-5 rounded-full bg-white text-accent-fill font-label text-label font-medium shadow-sm hover:bg-surface-bright active:scale-95 transition-all">
+            Book now
+          </button>
+</div>
+</section>
+<!-- Upcoming Booking Strip -->
+<section class="bg-surface rounded-2xl p-3.5 px-4 shadow-ambient-sm flex items-center justify-between border border-divider/60 active:scale-[0.99] transition-transform cursor-pointer">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-alt flex items-center justify-center flex-shrink-0 text-accent-fill">
+<span class="material-symbols-outlined text-[20px]">event</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label text-label font-medium text-text-primary">Deep clean, Sat 10:00 AM</span>
+<span class="font-caption text-[12px] text-text-tertiary">Mission District • with Maria L.</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-1 rounded-full bg-success-tint text-success-text font-caption text-[12px] font-semibold">
+            Accepted
+          </span>
+<span class="material-symbols-outlined text-text-tertiary text-[18px]">chevron_right</span>
+</div>
+</section>
+<!-- Categories Section (3x2 Grid) -->
+<section class="flex flex-col gap-3 pt-1">
+<div class="flex items-center justify-between">
+<h3 class="font-title text-title text-text-primary">Categories</h3>
+<button class="font-caption text-caption text-accent-fill font-medium hover:underline">See all</button>
+</div>
+<div class="grid grid-cols-3 gap-2.5">
+<!-- Cleaning -->
+<div class="bg-surface rounded-2xl p-3 flex flex-col items-center justify-center gap-2 shadow-ambient-sm border border-transparent hover:border-divider active:scale-95 transition-all cursor-pointer">
+<div class="w-11 h-11 rounded-full bg-accent-tint flex items-center justify-center text-accent-fill">
+<span class="material-symbols-outlined text-[22px]">cleaning_services</span>
+</div>
+<span class="font-body text-[13px] font-medium text-text-primary">Cleaning</span>
+</div>
+<!-- Plumbing -->
+<div class="bg-surface rounded-2xl p-3 flex flex-col items-center justify-center gap-2 shadow-ambient-sm border border-transparent hover:border-divider active:scale-95 transition-all cursor-pointer">
+<div class="w-11 h-11 rounded-full bg-accent-tint flex items-center justify-center text-accent-fill">
+<span class="material-symbols-outlined text-[22px]">plumbing</span>
+</div>
+<span class="font-body text-[13px] font-medium text-text-primary">Plumbing</span>
+</div>
+<!-- Electrical -->
+<div class="bg-surface rounded-2xl p-3 flex flex-col items-center justify-center gap-2 shadow-ambient-sm border border-transparent hover:border-divider active:scale-95 transition-all cursor-pointer">
+<div class="w-11 h-11 rounded-full bg-accent-tint flex items-center justify-center text-accent-fill">
+<span class="material-symbols-outlined text-[22px]">bolt</span>
+</div>
+<span class="font-body text-[13px] font-medium text-text-primary">Electrical</span>
+</div>
+<!-- Handyman -->
+<div class="bg-surface rounded-2xl p-3 flex flex-col items-center justify-center gap-2 shadow-ambient-sm border border-transparent hover:border-divider active:scale-95 transition-all cursor-pointer">
+<div class="w-11 h-11 rounded-full bg-accent-tint flex items-center justify-center text-accent-fill">
+<span class="material-symbols-outlined text-[22px]">handyman</span>
+</div>
+<span class="font-body text-[13px] font-medium text-text-primary">Handyman</span>
+</div>
+<!-- Moving -->
+<div class="bg-surface rounded-2xl p-3 flex flex-col items-center justify-center gap-2 shadow-ambient-sm border border-transparent hover:border-divider active:scale-95 transition-all cursor-pointer">
+<div class="w-11 h-11 rounded-full bg-accent-tint flex items-center justify-center text-accent-fill">
+<span class="material-symbols-outlined text-[22px]">local_shipping</span>
+</div>
+<span class="font-body text-[13px] font-medium text-text-primary">Moving</span>
+</div>
+<!-- Beauty -->
+<div class="bg-surface rounded-2xl p-3 flex flex-col items-center justify-center gap-2 shadow-ambient-sm border border-transparent hover:border-divider active:scale-95 transition-all cursor-pointer">
+<div class="w-11 h-11 rounded-full bg-accent-tint flex items-center justify-center text-accent-fill">
+<span class="material-symbols-outlined text-[22px]">content_cut</span>
+</div>
+<span class="font-body text-[13px] font-medium text-text-primary">Beauty</span>
+</div>
+</div>
+</section>
+<!-- Top Rated Near You Section -->
+<section class="flex flex-col gap-3 pt-1">
+<div class="flex items-center justify-between">
+<h3 class="font-title text-title text-text-primary">Top rated near you</h3>
+<button class="font-caption text-caption text-accent-fill font-medium hover:underline">Explore</button>
+</div>
+<!-- Providers Horizontal Rail -->
+<div class="flex gap-3 overflow-x-auto no-scrollbar -mx-margin px-margin pb-2 snap-x snap-mandatory">
+<!-- Card 1: Maria Lopez -->
+<div class="snap-start shrink-0 w-[240px] bg-surface rounded-2xl p-3.5 shadow-ambient flex flex-col gap-3 border border-divider/40">
+<div class="relative w-full h-[140px] rounded-xl overflow-hidden bg-surface-alt">
+<img alt="Portrait of Maria Lopez, a smiling female professional cleaner in uniform with cleaning tools" class="w-full h-full object-cover object-top" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAF8QCWKyM8nMjKdDsOvxqlIGaqvN0OjNOXVrWJ4NkGvNceTXoAlQNlXXJIqoke9yUTy3D-DXcYUdGD_x6aBccZ7Jr98jJ2LwNg2ixBeUXgKD0tlxfd3ZefFL7VKUcXuzLeCSr_0dx5cWqFhTVPsX_pp5PN63entDmDfGQR3cIRcgYJIiwktShqeO1XvA9GPGiU4LlMXPJKJR16w83lj3kgN4P3IGqhZ_oFcRRt4xzYDTvM5g82uCqGtAWNo_ZVLzaTMyCQTPBU83U8qg"/>
+<button class="absolute top-2 right-2 w-8 h-8 rounded-full bg-white/80 backdrop-blur-md flex items-center justify-center text-text-secondary active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[18px]">bookmark_border</span>
+</button>
+<div class="absolute bottom-2 left-2 px-2 py-0.5 rounded-md bg-white/90 backdrop-blur-md flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-amber-star text-[15px] fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-caption text-[12px] font-semibold text-text-primary">4.9</span>
+<span class="font-caption text-[12px] text-text-tertiary">(212)</span>
+</div>
+</div>
+<div class="flex flex-col">
+<div class="flex justify-between items-baseline">
+<h4 class="font-title text-[16px] leading-tight text-text-primary">Maria Lopez</h4>
+<span class="font-title text-[15px] font-bold text-accent-fill">$35<span class="text-[12px] font-normal text-text-tertiary">/hr</span></span>
+</div>
+<span class="font-caption text-caption text-text-secondary mt-0.5">House cleaning</span>
+</div>
+<button class="w-full h-9 rounded-full bg-accent-tint text-accent-fill font-label text-[13px] font-medium flex items-center justify-center gap-1.5 hover:bg-accent-fill hover:text-white transition-colors active:scale-95">
+<span class="material-symbols-outlined text-[16px]">bolt</span>
+              Instant book
+            </button>
+</div>
+<!-- Card 2: James Okafor -->
+<div class="snap-start shrink-0 w-[240px] bg-surface rounded-2xl p-3.5 shadow-ambient flex flex-col gap-3 border border-divider/40">
+<div class="relative w-full h-[140px] rounded-xl overflow-hidden bg-surface-alt">
+<img alt="Portrait of James Okafor, a smiling experienced plumber in his workshop with wrench and tool belt" class="w-full h-full object-cover object-top" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5M4xA2ut4Jq9VQAnj1pwNyGZegJaujsfum0X7rh8S8I-mM8MmW3ZVtyCaJ27iugi5h35yNHk6KQ6a7XNP_okty3xcz9MLxlvdtnDoVZcuLyugNiAErNmMRtm_-2f7vWS7OO475Z8f_3F7cfx7Y2m_AxZ22u3cYBaISG4ddWJgAQQ-_dRdlYKj3o77UFi8S8n1vkf4PcfFxTKX6x7qjqkphkhJJwEmVoOsA6xG6CP03FYqmSIx_QBYhmQxFBFAi0istdBG6MwEVHRmyQ"/>
+<button class="absolute top-2 right-2 w-8 h-8 rounded-full bg-white/80 backdrop-blur-md flex items-center justify-center text-text-secondary active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[18px]">bookmark_border</span>
+</button>
+<div class="absolute bottom-2 left-2 px-2 py-0.5 rounded-md bg-white/90 backdrop-blur-md flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-amber-star text-[15px] fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-caption text-[12px] font-semibold text-text-primary">4.8</span>
+<span class="font-caption text-[12px] text-text-tertiary">(168)</span>
+</div>
+</div>
+<div class="flex flex-col">
+<div class="flex justify-between items-baseline">
+<h4 class="font-title text-[16px] leading-tight text-text-primary">James Okafor</h4>
+<span class="font-title text-[15px] font-bold text-accent-fill">$55<span class="text-[12px] font-normal text-text-tertiary">/hr</span></span>
+</div>
+<span class="font-caption text-caption text-text-secondary mt-0.5">Plumber</span>
+</div>
+<button class="w-full h-9 rounded-full bg-accent-tint text-accent-fill font-label text-[13px] font-medium flex items-center justify-center gap-1.5 hover:bg-accent-fill hover:text-white transition-colors active:scale-95">
+<span class="material-symbols-outlined text-[16px]">bolt</span>
+              Instant book
+            </button>
+</div>
+</div>
+</section>
+</div>
+<!-- Fixed Bottom Tab Bar -->
+<nav class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[393px] bg-surface border-t border-divider px-6 py-2 pb-6 flex justify-around items-center z-50 shadow-lg">
+<!-- Home (ACTIVE) -->
+<a class="flex flex-col items-center gap-1 text-accent-fill group" href="#home">
+<div class="w-12 h-7 rounded-full bg-accent-tint flex items-center justify-center transition-transform group-active:scale-95">
+<span class="material-symbols-outlined text-[20px] fill" style="font-variation-settings: 'FILL' 1;">home</span>
+</div>
+<span class="font-label text-[12px] font-semibold tracking-wide">Home</span>
+</a>
+<!-- Bookings -->
+<a class="flex flex-col items-center gap-1 text-text-secondary group" href="#bookings">
+<div class="w-12 h-7 rounded-full flex items-center justify-center transition-transform group-active:scale-95">
+<span class="material-symbols-outlined text-[20px]">calendar_today</span>
+</div>
+<span class="font-label text-[12px] font-medium tracking-wide">Bookings</span>
+</a>
+<!-- Inbox -->
+<a class="flex flex-col items-center gap-1 text-text-secondary group" href="#inbox">
+<div class="w-12 h-7 rounded-full flex items-center justify-center transition-transform group-active:scale-95">
+<span class="material-symbols-outlined text-[20px]">chat_bubble_outline</span>
+</div>
+<span class="font-label text-[12px] font-medium tracking-wide">Inbox</span>
+</a>
+<!-- Profile -->
+<a class="flex flex-col items-center gap-1 text-text-secondary group" href="#profile">
+<div class="w-12 h-7 rounded-full flex items-center justify-center transition-transform group-active:scale-95">
+<span class="material-symbols-outlined text-[20px]">person_outline</span>
+</div>
+<span class="font-label text-[12px] font-medium tracking-wide">Profile</span>
+</a>
+</nav>
+</main>
+</body></html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Tendo - Welcome</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&amp;family=Young+Serif&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-tertiary-fixed": "#001d35",
+            "background": "#FCF4F5",
+            "surface-container-lowest": "#ffffff",
+            "surface": "#FFFFFF",
+            "surface-container-high": "#ffe2df",
+            "on-tertiary-container": "#d2e5ff",
+            "info-tint": "#F9E0E4",
+            "info-text": "#CD001E",
+            "warning-text": "#A75906",
+            "secondary-fixed-dim": "#6ed9b9",
+            "success-tint": "#E3F4E9",
+            "danger-tint": "#F7E4E4",
+            "text-primary": "#1F0C0F",
+            "surface-container-highest": "#fddbd8",
+            "support-strong": "#38A685",
+            "outline-variant": "#e7bdb9",
+            "text-tertiary": "#7A6468",
+            "amber-star": "#D97706",
+            "outline": "#926f6b",
+            "tertiary": "#005085",
+            "on-primary-fixed-variant": "#930012",
+            "primary-fixed-dim": "#ffb3ad",
+            "secondary-fixed": "#8bf6d4",
+            "tertiary-fixed-dim": "#9ccaff",
+            "on-tertiary": "#ffffff",
+            "primary-container": "#cd001e",
+            "surface-tint": "#c0001b",
+            "on-secondary-fixed-variant": "#00513f",
+            "on-error": "#ffffff",
+            "control-border": "#B4898B",
+            "accent-tint": "#FCDBE0",
+            "on-tertiary-fixed-variant": "#00497b",
+            "success-text": "#0E7C3A",
+            "on-secondary": "#ffffff",
+            "surface-bright": "#fff8f7",
+            "on-primary-container": "#ffdcd8",
+            "tertiary-fixed": "#d0e4ff",
+            "on-error-container": "#93000a",
+            "primary": "#a00015",
+            "surface-alt": "#F8EAEC",
+            "error-container": "#ffdad6",
+            "danger-text": "#B91C1C",
+            "accent-fill": "#CD001E",
+            "surface-dim": "#f4d2cf",
+            "tertiary-container": "#0069ac",
+            "surface-container-low": "#fff0ef",
+            "surface-container": "#ffe9e7",
+            "warning-tint": "#FAEFE1",
+            "inverse-on-surface": "#ffedeb",
+            "on-secondary-fixed": "#002118",
+            "text-secondary": "#5A4549",
+            "surface-variant": "#fddbd8",
+            "on-secondary-container": "#007059",
+            "on-background": "#291715",
+            "secondary-container": "#88f3d1",
+            "on-primary-fixed": "#410004",
+            "on-surface": "#291715",
+            "accent-pressed": "#CA001F",
+            "divider": "#EADADC",
+            "inverse-surface": "#402b2a",
+            "error": "#ba1a1a",
+            "inverse-primary": "#ffb3ad",
+            "secondary": "#006b55",
+            "on-surface-variant": "#5d3f3d",
+            "primary-fixed": "#ffdad7",
+            "on-primary": "#ffffff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-md": "0.75rem",
+            "gutter": "1rem",
+            "space-xs": "0.25rem",
+            "space-2xl": "2rem",
+            "space-xl": "1.5rem",
+            "space-lg": "1rem",
+            "space-sm": "0.5rem",
+            "margin": "1.25rem"
+          },
+          "fontFamily": {
+            "display": [
+              "Young Serif", "serif"
+            ],
+            "body": [
+              "Rubik", "sans-serif"
+            ],
+            "label": [
+              "Rubik", "sans-serif"
+            ],
+            "caption": [
+              "Rubik", "sans-serif"
+            ],
+            "title": [
+              "Rubik", "sans-serif"
+            ]
+          },
+          "fontSize": {
+            "display": [
+              "32px",
+              {
+                "lineHeight": "40px",
+                "letterSpacing": "-0.01em",
+                "fontWeight": "400"
+              }
+            ],
+            "body": [
+              "16px",
+              {
+                "lineHeight": "24px",
+                "fontWeight": "400"
+              }
+            ],
+            "label": [
+              "14px",
+              {
+                "lineHeight": "20px",
+                "fontWeight": "500"
+              }
+            ],
+            "caption": [
+              "13px",
+              {
+                "lineHeight": "18px",
+                "fontWeight": "500"
+              }
+            ],
+            "title": [
+              "20px",
+              {
+                "lineHeight": "28px",
+                "fontWeight": "600"
+              }
+            ]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    /* Hide scrollbars for seamless native app sensation */
+    body::-webkit-scrollbar {
+      display: none;
+    }
+    body {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-background text-text-primary antialiased font-body min-h-screen flex justify-center selection:bg-accent-tint selection:text-accent-fill">
+<!-- Mobile Frame Container (Strict 393px phone viewport simulation) -->
+<main class="w-full max-w-[393px] min-h-screen bg-background relative flex flex-col justify-between overflow-x-hidden shadow-2xl">
+<!-- Top Hero Section (55% Screen Height) -->
+<div class="relative w-full h-[52vh] min-h-[380px] max-h-[460px] overflow-hidden select-none">
+<!-- Full photography asset -->
+<img alt="Smiling home service professional showing a digital tablet to a relaxed client in a warm sunlit living room" class="w-full h-full object-cover object-center transform scale-105 transition-transform duration-700 hover:scale-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArmW0QBaOOfPvdN1Pc6-2p0h8v-3w7ySzLTY4x35EJiI7D6KINOm-e-imuK6jHolFb0LhHaH6_qCGQcaN1EACCBlqz0KiP_CxXR7tHp3Y-ag3mnxpf76R6qZ_RTIVKSaZ2F9lTIACOYHW3BCnJ-dMb63dlW2rSYeNCsgcN0Op0jzxTAmXNkxzHJMC8oYdzQFGLvs_6o6eIcbGdct8bEjeWA0yMYk7IzVvGGZAWI-M9Pt7zAFJGCHwD-y1CSK9fNcDC7X423sVMwTVOgw"/>
+<!-- Top Overlay Vignette for App Bar Legibility -->
+<div class="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-black/40 via-black/15 to-transparent pointer-events-none"></div>
+<!-- Shared Component: TopAppBar docked full-width top -->
+<header class="absolute top-0 inset-x-0 z-20 flex justify-between items-center w-full px-margin pt-11 bg-transparent">
+<div class="flex items-center gap-1.5 active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined text-white text-2xl drop-shadow-sm">handshake</span>
+<span class="text-title font-title font-bold text-white tracking-tight drop-shadow-sm">Tendo</span>
+</div>
+<button class="text-label font-label text-white/95 font-medium hover:opacity-80 transition-opacity duration-200 active:scale-95 px-3 py-1 rounded-full bg-black/20 backdrop-blur-sm drop-shadow-sm" type="button">
+          Skip
+        </button>
+</header>
+<!-- Bottom Seamless Gradient Fade into Canvas Background #FCF4F5 -->
+<div class="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-[#FCF4F5] via-[#FCF4F5]/85 to-transparent pointer-events-none"></div>
+</div>
+<!-- Content Narrative & Conversion Area -->
+<div class="relative z-10 flex-1 flex flex-col justify-between px-margin pt-1 pb-9 -mt-6">
+<!-- Brand & Copy Group -->
+<div class="flex flex-col">
+<!-- Logo Stamp & Micro Badge -->
+<div class="flex items-center gap-2 mb-3">
+<div class="w-7 h-7 rounded-full bg-accent-fill flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-white text-base font-bold">handshake</span>
+</div>
+<span class="text-label font-title font-bold text-accent-fill tracking-wide uppercase text-xs">Tendo Home</span>
+</div>
+<!-- Main Display Headline -->
+<h1 class="font-display text-display text-text-primary tracking-tight leading-[1.2] mb-3">
+          Trusted help at home, in a few taps
+        </h1>
+<!-- Supporting Subline -->
+<p class="font-body text-body text-text-secondary leading-relaxed mb-5 max-w-[320px]">
+          Book vetted local pros for cleaning, repairs and more
+        </p>
+<!-- Social Proof Trust Chips -->
+<div class="flex flex-wrap items-center gap-2">
+<!-- Rating Chip -->
+<div class="h-8 px-3 rounded-full bg-accent-tint flex items-center gap-1.5 transition-transform duration-150 active:scale-95">
+<span class="material-symbols-outlined text-amber-star text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-caption text-caption text-accent-fill font-medium">4.8 average rating</span>
+</div>
+<!-- Pros Network Chip -->
+<div class="h-8 px-3 rounded-full bg-accent-tint flex items-center gap-1.5 transition-transform duration-150 active:scale-95">
+<span class="material-symbols-outlined text-accent-fill text-[15px]">verified_user</span>
+<span class="font-caption text-caption text-accent-fill font-medium">2,400+ pros</span>
+</div>
+<!-- Availability Chip -->
+<div class="h-8 px-3 rounded-full bg-accent-tint flex items-center gap-1.5 transition-transform duration-150 active:scale-95">
+<span class="material-symbols-outlined text-accent-fill text-[15px]">bolt</span>
+<span class="font-caption text-caption text-accent-fill font-medium">Same-day slots</span>
+</div>
+</div>
+</div>
+<!-- Action Panel -->
+<div class="pt-8 flex flex-col items-center gap-3 w-full">
+<!-- Primary Action Button -->
+<button class="w-full h-14 bg-accent-fill hover:bg-accent-pressed active:scale-[0.98] transition-all duration-150 rounded-full flex items-center justify-center gap-2 shadow-[0_8px_24px_rgba(205,0,30,0.22)] group cursor-pointer" type="button">
+<span class="font-label text-label text-white font-medium text-[15px]">Get started</span>
+<span class="material-symbols-outlined text-white text-[18px] group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+</button>
+<!-- Secondary Action Button -->
+<button class="h-11 px-4 flex items-center justify-center active:scale-95 transition-transform duration-150 rounded-full hover:bg-black/[0.03] cursor-pointer" type="button">
+<span class="font-label text-label text-text-primary font-medium hover:text-accent-fill transition-colors">
+            I already have an account
+          </span>
+</button>
+</div>
+</div>
+<!-- iOS Home Indicator Spacing & Indicator Bar -->
+<div class="w-full pb-2 flex justify-center pointer-events-none">
+<div class="w-32 h-1 bg-text-primary/20 rounded-full"></div>
+</div>
+</main>
+</body></html>

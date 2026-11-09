@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tendo - Sign Up</title>
+<!-- Google Fonts: Young Serif & Rubik -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&amp;family=Young+Serif&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-background": "#291715",
+            "on-primary-container": "#ffdcd8",
+            "danger-text": "#B91C1C",
+            "tertiary": "#005085",
+            "warning-text": "#A75906",
+            "background": "#FCF4F5",
+            "surface-variant": "#fddbd8",
+            "primary-fixed": "#ffdad7",
+            "on-primary": "#ffffff",
+            "on-tertiary-fixed-variant": "#00497b",
+            "on-secondary-fixed": "#002118",
+            "success-text": "#0E7C3A",
+            "danger-tint": "#F7E4E4",
+            "inverse-on-surface": "#ffedeb",
+            "text-primary": "#1F0C0F",
+            "info-tint": "#F9E0E4",
+            "success-tint": "#E3F4E9",
+            "surface-container-lowest": "#ffffff",
+            "error-container": "#ffdad6",
+            "on-primary-fixed-variant": "#930012",
+            "text-tertiary": "#7A6468",
+            "on-secondary-fixed-variant": "#00513f",
+            "amber-star": "#D97706",
+            "surface-container-low": "#fff0ef",
+            "surface-bright": "#fff8f7",
+            "on-tertiary": "#ffffff",
+            "surface-dim": "#f4d2cf",
+            "on-surface-variant": "#5d3f3d",
+            "tertiary-fixed-dim": "#9ccaff",
+            "on-primary-fixed": "#410004",
+            "text-secondary": "#5A4549",
+            "accent-pressed": "#CA001F",
+            "surface-alt": "#F8EAEC",
+            "surface": "#FFFFFF",
+            "outline": "#926f6b",
+            "primary-container": "#cd001e",
+            "on-tertiary-fixed": "#001d35",
+            "surface-container": "#ffe9e7",
+            "outline-variant": "#e7bdb9",
+            "on-secondary-container": "#007059",
+            "on-secondary": "#ffffff",
+            "accent-tint": "#FCDBE0",
+            "tertiary-fixed": "#d0e4ff",
+            "inverse-surface": "#402b2a",
+            "surface-container-high": "#ffe2df",
+            "secondary": "#006b55",
+            "warning-tint": "#FAEFE1",
+            "tertiary-container": "#0069ac",
+            "error": "#ba1a1a",
+            "accent-fill": "#CD001E",
+            "on-error-container": "#93000a",
+            "inverse-primary": "#ffb3ad",
+            "control-border": "#B4898B",
+            "surface-container-highest": "#fddbd8",
+            "on-error": "#ffffff",
+            "on-surface": "#291715",
+            "primary": "#a00015",
+            "info-text": "#CD001E",
+            "divider": "#EADADC",
+            "support-strong": "#38A685",
+            "secondary-container": "#88f3d1",
+            "on-tertiary-container": "#d2e5ff",
+            "surface-tint": "#c0001b",
+            "secondary-fixed": "#8bf6d4",
+            "secondary-fixed-dim": "#6ed9b9",
+            "primary-fixed-dim": "#ffb3ad"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "2xl": "1.25rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-md": "0.75rem",
+            "gutter": "1rem",
+            "space-lg": "1rem",
+            "margin": "1.25rem",
+            "space-xs": "0.25rem",
+            "space-2xl": "2rem",
+            "space-xl": "1.5rem",
+            "space-sm": "0.5rem"
+          },
+          "fontFamily": {
+            "title": ["Rubik", "sans-serif"],
+            "display": ["Young Serif", "serif"],
+            "label": ["Rubik", "sans-serif"],
+            "caption": ["Rubik", "sans-serif"],
+            "body": ["Rubik", "sans-serif"]
+          },
+          "fontSize": {
+            "title": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "display": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+            "label": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "caption": ["13px", { "lineHeight": "18px", "fontWeight": "500" }],
+            "body": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+          },
+          "boxShadow": {
+            "ambient": "0 1px 2px rgba(31,12,15,0.04), 0 8px 24px rgba(31,12,15,0.06)"
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-[#e5e5e5] min-h-full flex items-center justify-center p-0 md:p-6 text-text-primary antialiased selection:bg-accent-tint selection:text-accent-fill">
+<!-- Mobile Simulator Frame: 393px width, min 852px -->
+<main class="w-full max-w-[393px] min-h-[852px] bg-background relative flex flex-col justify-between shadow-2xl overflow-hidden pb-8">
+<!-- Top System Header / TopAppBar -->
+<div>
+<!-- Status Bar Area Simulation (Safe area padding: ~50px) -->
+<div class="h-11 w-full flex items-center justify-between px-6 pt-2">
+<span class="text-caption font-caption text-text-primary font-medium tracking-tight">9:41</span>
+<div class="flex items-center gap-1.5 text-text-primary">
+<svg class="w-3.5 h-3.5" fill="currentColor" viewbox="0 0 24 24">
+<path d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L12 22l7.03-4.39C20.26 16.07 21 14.12 21 12c0-4.97-4.03-9-9-9z" opacity="0.3"></path>
+<path d="M12 6c-3.31 0-6 2.69-6 6 0 1.44.52 2.76 1.38 3.8L12 19l4.62-3.2C17.48 14.76 18 13.44 18 12c0-3.31-2.69-6-6-6z"></path>
+</svg>
+<svg class="w-3.5 h-3.5" fill="currentColor" viewbox="0 0 24 24">
+<path d="M12 4C7.31 4 3.07 5.9 0 8.98L12 21 24 8.98C20.93 5.9 16.69 4 12 4z"></path>
+</svg>
+<div class="w-5 h-2.5 border border-text-primary rounded-sm p-0.5 flex items-center">
+<div class="h-full w-full bg-text-primary rounded-2xs"></div>
+</div>
+</div>
+</div>
+<!-- TopAppBar Navigation Shell with Brand Anchor Execution -->
+<header class="flex justify-between items-center w-full px-margin pt-2 bg-transparent">
+<button aria-label="Go back" class="w-10 h-10 -ml-1.5 flex items-center justify-center rounded-full hover:bg-surface-alt active:scale-95 transition-all duration-150 text-text-primary" type="button">
+<svg class="w-6 h-6 stroke-current" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24">
+<path d="M19 12H5M12 19l-7-7 7-7"></path>
+</svg>
+</button>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-accent-fill text-[20px]" data-icon="handshake">handshake</span>
+<span class="text-title font-title font-bold text-accent-fill">Tendo</span>
+</div>
+<button class="text-label font-label text-text-secondary hover:opacity-80 active:scale-95 transition-all duration-150 px-2 py-1" type="button">
+          Skip
+        </button>
+</header>
+<!-- Main Form Container -->
+<section class="px-margin pt-5">
+<!-- Screen Title -->
+<h1 class="text-display font-display text-text-primary leading-[1.15] mb-2 tracking-tight">
+          Create your account
+        </h1>
+<p class="text-label font-label text-text-secondary mb-6">
+          Find trusted professionals or grow your trade business.
+        </p>
+<!-- Role Selector Cards (Bento Style 2-Col Grid) -->
+<fieldset class="grid grid-cols-2 gap-3 mb-6">
+<legend class="sr-only">Choose your account role</legend>
+<!-- Card 1: Selected ('I need a service') -->
+<label class="relative flex flex-col justify-between p-4 h-36 rounded-2xl bg-accent-tint border-2 border-accent-fill cursor-pointer shadow-ambient transition-transform active:scale-[0.98]">
+<input checked="" class="sr-only" name="role" type="radio" value="client"/>
+<div class="flex items-start justify-between w-full">
+<div class="w-10 h-10 rounded-xl bg-surface flex items-center justify-center text-accent-fill shadow-sm">
+<svg class="w-6 h-6 stroke-current" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24">
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+</div>
+<!-- Checkmark badge in #CD001E -->
+<span class="w-6 h-6 rounded-full bg-accent-fill text-surface flex items-center justify-center shadow-xs">
+<svg class="w-3.5 h-3.5 stroke-current" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" viewbox="0 0 24 24">
+<polyline points="20 6 9 17 4 12"></polyline>
+</svg>
+</span>
+</div>
+<div>
+<p class="text-label font-label text-text-primary font-semibold leading-tight">
+                I need a service
+              </p>
+<span class="text-[12px] font-caption text-text-secondary leading-tight mt-0.5 block">
+                Book top local pros
+              </span>
+</div>
+</label>
+<!-- Card 2: Unselected ('I offer services') -->
+<label class="relative flex flex-col justify-between p-4 h-36 rounded-2xl bg-surface border border-divider cursor-pointer shadow-ambient hover:border-control-border hover:bg-surface-bright active:scale-[0.98] transition-all">
+<input class="sr-only" name="role" type="radio" value="provider"/>
+<div class="flex items-start justify-between w-full">
+<div class="w-10 h-10 rounded-xl bg-surface-alt flex items-center justify-center text-text-secondary">
+<svg class="w-6 h-6 stroke-current" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24">
+<path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+</svg>
+</div>
+<span class="w-6 h-6 rounded-full border border-divider bg-transparent"></span>
+</div>
+<div>
+<p class="text-label font-label text-text-primary font-semibold leading-tight">
+                I offer services
+              </p>
+<span class="text-[12px] font-caption text-text-secondary leading-tight mt-0.5 block">
+                Grow client base
+              </span>
+</div>
+</label>
+</fieldset>
+<!-- Input Fields Group -->
+<form class="space-y-4" onsubmit="event.preventDefault();">
+<!-- 1. Full Name -->
+<div>
+<label class="block text-label font-label text-text-primary mb-1.5" for="fullName">
+              Full name
+            </label>
+<div class="relative">
+<input class="w-full h-[52px] px-4 rounded-[12px] bg-surface border border-control-border text-text-primary font-body text-body placeholder-text-tertiary focus:outline-none focus:ring-2 focus:ring-accent-fill focus:border-accent-fill transition-all" id="fullName" name="fullName" placeholder="Your legal name" type="text" value="Emma Carter"/>
+<div class="absolute right-3.5 top-1/2 -translate-y-1/2 text-text-tertiary pointer-events-none">
+<svg class="w-5 h-5 stroke-current" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24">
+<path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+<circle cx="12" cy="7" r="4"></circle>
+</svg>
+</div>
+</div>
+</div>
+<!-- 2. Phone Number (Focused state per spec) -->
+<div>
+<label class="block text-label font-label text-text-primary mb-1.5" for="phoneNumber">
+              Phone number
+            </label>
+<div class="relative">
+<input class="w-full h-[52px] px-4 rounded-[12px] bg-surface border-2 border-accent-fill ring-2 ring-accent-fill text-text-primary font-body text-body focus:outline-none transition-all" id="phoneNumber" name="phoneNumber" placeholder="+1 (000) 000-0000" type="tel" value="+1 (415) 555-0142"/>
+<div class="absolute right-3.5 top-1/2 -translate-y-1/2 text-accent-fill pointer-events-none">
+<svg class="w-5 h-5 stroke-current" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24">
+<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+</svg>
+</div>
+</div>
+<!-- Helper caption -->
+<p class="mt-1.5 text-caption font-caption text-text-secondary flex items-center gap-1">
+<svg class="w-3.5 h-3.5 stroke-current shrink-0" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="10"></circle>
+<line x1="12" x2="12" y1="16" y2="12"></line>
+<line x1="12" x2="12.01" y1="8" y2="8"></line>
+</svg>
+<span>We will text you a 6-digit code</span>
+</p>
+</div>
+<!-- 3. Email Input -->
+<div>
+<label class="block text-label font-label text-text-primary mb-1.5" for="email">
+              Email address
+            </label>
+<div class="relative">
+<input class="w-full h-[52px] px-4 rounded-[12px] bg-surface border border-control-border text-text-primary font-body text-body placeholder-text-tertiary focus:outline-none focus:ring-2 focus:ring-accent-fill focus:border-accent-fill transition-all" id="email" name="email" placeholder="you@domain.com" type="email" value="emma.carter@mail.com"/>
+<div class="absolute right-3.5 top-1/2 -translate-y-1/2 text-text-tertiary pointer-events-none">
+<svg class="w-5 h-5 stroke-current" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24">
+<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+<polyline points="22,6 12,13 2,6"></polyline>
+</svg>
+</div>
+</div>
+</div>
+</form>
+</section>
+</div>
+<!-- Bottom Action & Footnote Area (No bottom navigation bar rendered) -->
+<footer class="px-margin pt-4 pb-2 mt-auto">
+<!-- Primary Pill CTA Button (56px tall, #CD001E) -->
+<button class="w-full h-14 bg-accent-fill hover:bg-accent-pressed active:scale-[0.98] transition-all duration-150 rounded-full flex items-center justify-center gap-2 text-on-primary font-label text-label shadow-ambient group" type="button">
+<span>Continue</span>
+<svg class="w-4 h-4 stroke-current transition-transform duration-200 group-hover:translate-x-0.5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<line x1="5" x2="19" y1="12" y2="12"></line>
+<polyline points="12 5 19 12 12 19"></polyline>
+</svg>
+</button>
+<!-- Terms & Privacy Footnote -->
+<p class="text-caption font-caption text-text-secondary text-center mt-3.5 px-2 leading-relaxed">
+        By continuing you accept the <a class="text-accent-fill underline font-medium hover:opacity-80" href="#">Terms</a> and <a class="text-accent-fill underline font-medium hover:opacity-80" href="#">Privacy Policy</a>
+</p>
+<!-- Mobile Home Indicator Simulation -->
+<div class="w-32 h-1 bg-text-primary/20 rounded-full mx-auto mt-5"></div>
+</footer>
+</main>
+<!-- Interactive State Micro-script -->
+<script>
+    // Minimal interaction script for role card toggling
+    document.querySelectorAll('input[name="role"]').forEach((radio) => {
+      radio.addEventListener('change', (e) => {
+        const labels = document.querySelectorAll('fieldset label');
+        labels.forEach(l => {
+          l.classList.remove('bg-accent-tint', 'border-2', 'border-accent-fill');
+          l.classList.add('bg-surface', 'border', 'border-divider');
+          const badge = l.querySelector('.w-6.h-6.rounded-full');
+          if (badge) {
+            badge.className = "w-6 h-6 rounded-full border border-divider bg-transparent";
+            badge.innerHTML = "";
+          }
+          const iconWrapper = l.querySelector('.rounded-xl');
+          if (iconWrapper) {
+            iconWrapper.className = "w-10 h-10 rounded-xl bg-surface-alt flex items-center justify-center text-text-secondary";
+          }
+        });
+
+        const activeLabel = e.target.closest('label');
+        activeLabel.classList.remove('bg-surface', 'border-divider');
+        activeLabel.classList.add('bg-accent-tint', 'border-2', 'border-accent-fill');
+        
+        const activeIconWrapper = activeLabel.querySelector('.rounded-xl');
+        if (activeIconWrapper) {
+          activeIconWrapper.className = "w-10 h-10 rounded-xl bg-surface flex items-center justify-center text-accent-fill shadow-sm";
+        }
+
+        const activeBadge = activeLabel.querySelector('.w-6.h-6.rounded-full');
+        if (activeBadge) {
+          activeBadge.className = "w-6 h-6 rounded-full bg-accent-fill text-surface flex items-center justify-center shadow-xs";
+          activeBadge.innerHTML = `<svg class="w-3.5 h-3.5 stroke-current" viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>`;
+        }
+      });
+    });
+  </script>
+</body></html>

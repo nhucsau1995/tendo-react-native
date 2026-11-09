@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tendo - Messages</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&amp;family=Young+Serif&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "accent-pressed": "#CA001F",
+            "primary-container": "#cd001e",
+            "error-container": "#ffdad6",
+            "on-primary-fixed": "#410004",
+            "support-strong": "#38A685",
+            "error": "#ba1a1a",
+            "warning-text": "#A75906",
+            "tertiary": "#005085",
+            "outline": "#926f6b",
+            "divider": "#EADADC",
+            "accent-tint": "#FCDBE0",
+            "on-tertiary": "#ffffff",
+            "success-text": "#0E7C3A",
+            "on-tertiary-container": "#d2e5ff",
+            "info-tint": "#F9E0E4",
+            "success-tint": "#E3F4E9",
+            "amber-star": "#D97706",
+            "text-primary": "#1F0C0F",
+            "surface-container": "#ffe9e7",
+            "on-secondary-container": "#007059",
+            "inverse-on-surface": "#ffedeb",
+            "on-error-container": "#93000a",
+            "on-surface": "#291715",
+            "tertiary-container": "#0069ac",
+            "on-background": "#291715",
+            "surface-container-lowest": "#ffffff",
+            "surface-bright": "#fff8f7",
+            "secondary": "#006b55",
+            "danger-text": "#B91C1C",
+            "background": "#FCF4F5",
+            "on-tertiary-fixed-variant": "#00497b",
+            "inverse-surface": "#402b2a",
+            "warning-tint": "#FAEFE1",
+            "primary-fixed": "#ffdad7",
+            "primary-fixed-dim": "#ffb3ad",
+            "on-primary-fixed-variant": "#930012",
+            "on-primary": "#ffffff",
+            "on-secondary-fixed-variant": "#00513f",
+            "secondary-fixed": "#8bf6d4",
+            "secondary-container": "#88f3d1",
+            "surface-container-high": "#ffe2df",
+            "on-surface-variant": "#5d3f3d",
+            "surface-tint": "#c0001b",
+            "tertiary-fixed-dim": "#9ccaff",
+            "tertiary-fixed": "#d0e4ff",
+            "danger-tint": "#F7E4E4",
+            "text-tertiary": "#7A6468",
+            "text-secondary": "#5A4549",
+            "surface-variant": "#fddbd8",
+            "accent-fill": "#CD001E",
+            "surface-container-highest": "#fddbd8",
+            "surface": "#FFFFFF",
+            "on-primary-container": "#ffdcd8",
+            "on-secondary-fixed": "#002118",
+            "surface-alt": "#F8EAEC",
+            "surface-container-low": "#fff0ef",
+            "primary": "#a00015",
+            "control-border": "#B4898B",
+            "surface-dim": "#f4d2cf",
+            "info-text": "#CD001E",
+            "secondary-fixed-dim": "#6ed9b9",
+            "on-secondary": "#ffffff",
+            "outline-variant": "#e7bdb9",
+            "inverse-primary": "#ffb3ad",
+            "on-error": "#ffffff",
+            "on-tertiary-fixed": "#001d35"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xs": "0.25rem",
+            "space-md": "0.75rem",
+            "space-lg": "1rem",
+            "space-2xl": "2rem",
+            "gutter": "1rem",
+            "margin": "1.25rem",
+            "space-xl": "1.5rem",
+            "space-sm": "0.5rem"
+          },
+          "fontFamily": {
+            "caption": [
+              "Rubik"
+            ],
+            "display": [
+              "Young Serif"
+            ],
+            "body": [
+              "Rubik"
+            ],
+            "title": [
+              "Rubik"
+            ],
+            "label": [
+              "Rubik"
+            ]
+          },
+          "fontSize": {
+            "caption": [
+              "13px",
+              {
+                "lineHeight": "18px",
+                "fontWeight": "500"
+              }
+            ],
+            "display": [
+              "32px",
+              {
+                "lineHeight": "40px",
+                "letterSpacing": "-0.01em",
+                "fontWeight": "400"
+              }
+            ],
+            "body": [
+              "16px",
+              {
+                "lineHeight": "24px",
+                "fontWeight": "400"
+              }
+            ],
+            "title": [
+              "20px",
+              {
+                "lineHeight": "28px",
+                "fontWeight": "600"
+              }
+            ],
+            "label": [
+              "14px",
+              {
+                "lineHeight": "20px",
+                "fontWeight": "500"
+              }
+            ]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      font-size: 22px;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .custom-shadow {
+      box-shadow: 0 1px 2px rgba(31,12,15,0.04), 0 8px 24px rgba(31,12,15,0.06);
+    }
+    .unread-glow {
+      box-shadow: 0 4px 20px -2px rgba(205,0,30,0.12), 0 1px 3px rgba(31,12,15,0.04);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-text-primary min-h-screen flex justify-center selection:bg-accent-tint selection:text-accent-fill antialiased">
+<!-- Mobile Frame Container (393px width reference) -->
+<div class="w-full max-w-[393px] min-h-screen bg-background flex flex-col relative pb-28">
+<!-- Top Status Space & Header -->
+<header class="w-full bg-surface shadow-sm sticky top-0 z-40 transition-colors">
+<!-- Status bar gap -->
+<div class="h-10 w-full flex justify-between items-center px-6 pt-2 select-none text-text-secondary text-caption font-caption">
+<span class="font-medium text-[14px]">9:41</span>
+<div class="flex items-center space-x-1.5">
+<span class="material-symbols-outlined text-[16px]">signal_cellular_4_bar</span>
+<span class="material-symbols-outlined text-[16px]">wifi</span>
+<span class="material-symbols-outlined text-[18px]">battery_full</span>
+</div>
+</div>
+<!-- App Bar Content -->
+<div class="flex justify-between items-center w-full px-5 py-3">
+<div class="flex items-center gap-3">
+<button aria-label="Go back" class="w-9 h-9 rounded-full flex items-center justify-center text-text-secondary hover:bg-surface-alt active:scale-95 transition-all">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-display text-display text-text-primary font-normal tracking-tight">Inbox</h1>
+</div>
+<div class="flex items-center gap-2">
+<button aria-label="Filters" class="relative w-10 h-10 rounded-full flex items-center justify-center text-accent-fill hover:bg-surface-alt active:scale-95 transition-all">
+<span class="material-symbols-outlined">tune</span>
+</button>
+<button aria-label="Notifications" class="relative w-10 h-10 rounded-full flex items-center justify-center text-text-secondary hover:bg-surface-alt active:scale-95 transition-all">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-accent-fill ring-2 ring-surface"></span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content Flow -->
+<main class="flex-1 px-5 pt-4 flex flex-col gap-4">
+<!-- Search Input -->
+<section class="relative w-full">
+<div class="relative flex items-center w-full">
+<span class="material-symbols-outlined absolute left-4 text-control-border pointer-events-none">search</span>
+<input class="w-full h-[52px] pl-11 pr-4 bg-surface rounded-[12px] border border-control-border text-text-primary placeholder:text-text-tertiary font-body text-label focus:outline-none focus:ring-2 focus:ring-accent-fill focus:border-transparent transition-all shadow-sm" placeholder="Search messages" type="text"/>
+<button aria-label="Clear or voice input" class="absolute right-3.5 p-1 rounded-full text-text-tertiary hover:text-text-primary active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[18px]">mic</span>
+</button>
+</div>
+</section>
+<!-- Quick Filter Chips -->
+<nav aria-label="Message category filter" class="flex items-center gap-2 overflow-x-auto py-1 no-scrollbar select-none">
+<button class="h-8 px-4 rounded-full bg-accent-fill text-white font-label text-caption font-medium shadow-sm transition-all active:scale-95 flex items-center gap-1.5 shrink-0">
+<span>All</span>
+<span class="bg-white/20 px-1.5 py-0.2 rounded-full text-[12px] leading-tight">4</span>
+</button>
+<button class="h-8 px-4 rounded-full bg-accent-tint text-accent-fill hover:bg-accent-fill hover:text-white font-label text-caption font-medium transition-all active:scale-95 flex items-center gap-1.5 shrink-0">
+<span>Unread</span>
+<span class="w-2 h-2 rounded-full bg-accent-fill"></span>
+</button>
+<button class="h-8 px-4 rounded-full bg-surface border border-divider text-text-secondary hover:border-control-border font-label text-caption font-medium transition-all active:scale-95 shrink-0">
+          Active jobs
+        </button>
+<button class="h-8 px-4 rounded-full bg-surface border border-divider text-text-secondary hover:border-control-border font-label text-caption font-medium transition-all active:scale-95 shrink-0">
+          Archive
+        </button>
+</nav>
+<!-- Section Label: Active Conversations -->
+<div class="flex items-center justify-between pt-1">
+<span class="font-label text-caption text-text-secondary uppercase tracking-wider font-semibold">Recent Messages</span>
+<span class="text-caption text-text-tertiary font-caption">Updated just now</span>
+</div>
+<!-- Conversations Container -->
+<div class="flex flex-col gap-3">
+<!-- Focal Card: Row 1 (Unread Highlight - Maria Lopez) -->
+<article class="relative bg-surface rounded-[20px] p-4 unread-glow border border-accent-tint/60 transition-all active:scale-[0.99] cursor-pointer overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-accent-fill"></div>
+<div class="flex items-start gap-3.5 pl-1.5">
+<!-- Avatar with Online Status Indicator -->
+<div class="relative shrink-0">
+<img alt="A portrait of Maria Lopez, a warm, smiling Latina cleaning professional wearing " class="w-14 h-14 rounded-full object-cover ring-2 ring-accent-tint/50 shadow-sm" data-alt="A portrait of Maria Lopez, a warm, smiling Latina cleaning professional wearing a dark navy polo shirt inside a sunlit, clean residential living room. Natural indoor daylight fills the room with soft warm tones matching a bright, trustworthy mobile service aesthetic with soft crimson nuances." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD00-6TGMavutq1g0GkONcdqytrJwgJMg86BfhveXY6vmUA20KImJHa-JTO8rYpPDSvs6sad1t-SA833dl1wSyuO7FEUxDKuWecP-uoNvVoTxm5Ry22O5l-bFc7Ca02zRO4r0upXQ4QI9pMVkqXpiXGUNVODdl3KXYxkcINnJPo5klvOJwwnYyfZ_AV4EZMCrAhSMPnblpe-VTuHM3z5EZhpU7MK3xyaa2bNm76JlC6A30XcP08Ps4PJNg6xLDl2ZkOiJ9TCX8KRdQpdg"/>
+<span class="absolute bottom-0 right-0 w-3.5 h-3.5 rounded-full bg-support-strong ring-2 ring-surface" title="Active now"></span>
+</div>
+<!-- Content Area -->
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1 mb-0.5">
+<div class="flex items-center gap-1.5 truncate">
+<h2 class="font-title text-[16px] text-text-primary font-bold truncate">Maria Lopez</h2>
+<span class="material-symbols-outlined text-accent-fill text-[16px] shrink-0" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<time class="font-caption text-caption text-accent-fill font-bold shrink-0">9:48 AM</time>
+</div>
+<!-- Service Chip / Tag -->
+<div class="mb-1.5">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-accent-tint/80 text-accent-fill font-caption text-[12px] font-semibold">
+                  Deep clean
+                </span>
+</div>
+<!-- Snippet & Badge Row -->
+<div class="flex items-center justify-between gap-2">
+<p class="font-body text-label text-text-primary font-semibold truncate leading-snug">
+                  Great, see you Saturday at 10
+                </p>
+<span class="shrink-0 flex items-center justify-center min-w-[20px] h-5 px-1.5 rounded-full bg-accent-fill text-white font-label text-[12px] font-bold shadow-sm">
+                  2
+                </span>
+</div>
+</div>
+</div>
+</article>
+<!-- Card: Row 2 (James Okafor) -->
+<article class="bg-surface rounded-[20px] p-4 custom-shadow hover:bg-surface-alt/40 transition-all active:scale-[0.99] cursor-pointer border border-transparent hover:border-divider">
+<div class="flex items-start gap-3.5">
+<!-- Avatar -->
+<div class="relative shrink-0">
+<img alt="A candid, warm photographic portrait of James Okafor, a competent African-Americ" class="w-14 h-14 rounded-full object-cover ring-1 ring-divider shadow-sm" data-alt="A candid, warm photographic portrait of James Okafor, a competent African-American plumber in a neat navy collared service shirt smiling broadly in a clean, modern workshop. Bright, natural lighting, crisp details, soft ambient shadows, conveying approachable craftsmanship." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAz_A_Gy-zf4La6KcXtCnIzfyhSARhW5MdX9-x8JPC7c90IyUz3i0gswL7NcjEBlygO5ksShNYJr2nAM6NqXATVLq-vXfKUCp62Y_B7IBIcdENSSCSaYUnAofNMDYTt7JhKbXbrs0ztMVWQIJ96Cnirdtzn36XX9kd_54fed4PtMzkGMZFhq4L81ud6SCNyiC2F3EmVDJLlUqlo25cY11ShU4H7YiMfwOq4dRs_18Lhgycujv_ErU75ny4jLGd1SUMHilpNMIbKZdS-Sw"/>
+</div>
+<!-- Content -->
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1 mb-0.5">
+<div class="flex items-center gap-1.5 truncate">
+<h2 class="font-title text-[16px] text-text-primary font-semibold truncate">James Okafor</h2>
+<span class="material-symbols-outlined text-support-strong text-[15px] shrink-0" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<time class="font-caption text-caption text-text-tertiary shrink-0">Yesterday</time>
+</div>
+<!-- Service Chip -->
+<div class="mb-1.5">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-surface-alt text-text-secondary font-caption text-[12px] font-medium border border-divider">
+                  Plumbing
+                </span>
+</div>
+<!-- Snippet & Delivery state -->
+<div class="flex items-center justify-between gap-2">
+<p class="font-body text-label text-text-secondary truncate leading-snug">
+                  I can come Tuesday after 3
+                </p>
+<span class="material-symbols-outlined text-support-strong text-[16px] shrink-0">done_all</span>
+</div>
+</div>
+</div>
+</article>
+<!-- Card: Row 3 (Sofia Rossi) -->
+<article class="bg-surface rounded-[20px] p-4 custom-shadow hover:bg-surface-alt/40 transition-all active:scale-[0.99] cursor-pointer border border-transparent hover:border-divider">
+<div class="flex items-start gap-3.5">
+<!-- Avatar -->
+<div class="relative shrink-0">
+<img alt="A bright authentic photograph of Sofia Rossi, an energetic Caucasian female hous" class="w-14 h-14 rounded-full object-cover ring-1 ring-divider shadow-sm" data-alt="A bright authentic photograph of Sofia Rossi, an energetic Caucasian female housekeeper wearing a dark service apron over a grey shirt in a spotless home kitchen. Warm, golden morning sunlight washes through the window, cheerful confident ambiance, editorial style mobile app portrait." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvh_lPhaX06rU4c_C84eJ7nLLGHf8EWG5u41tPIsm6yqUDWw3iv2b2uCO17axOjbF0xncnPH2Muy-rbTUrVNcOmuSU_ehkTxF3P39-Il0j9zi_n67-i9HB9nG4spA6v1crxyAk2-zR13gwuu_9miKmJCu-xOEQmNzceMosjmDy6IuEskEo0Ae4hLu1CzF_ibd1iNfvz93ibs_iID5XalEHP-fWtSSF5CkFM_LFGSBLAdUatXjwKLSVlaVyh5ljddJKVBmQtvvq4Q5Nuw"/>
+</div>
+<!-- Content -->
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1 mb-0.5">
+<div class="flex items-center gap-1.5 truncate">
+<h2 class="font-title text-[16px] text-text-primary font-semibold truncate">Sofia Rossi</h2>
+</div>
+<time class="font-caption text-caption text-text-tertiary shrink-0">Mon</time>
+</div>
+<!-- Service Chip -->
+<div class="mb-1.5">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-surface-alt text-text-secondary font-caption text-[12px] font-medium border border-divider">
+                  Standard clean
+                </span>
+</div>
+<!-- Snippet -->
+<div class="flex items-center justify-between gap-2">
+<p class="font-body text-label text-text-secondary truncate leading-snug">
+                  Thanks for booking again!
+                </p>
+<span class="material-symbols-outlined text-text-tertiary text-[16px] shrink-0">reply</span>
+</div>
+</div>
+</div>
+</article>
+<!-- Card: Row 4 (Tendo Support) -->
+<article class="bg-surface rounded-[20px] p-4 custom-shadow hover:bg-surface-alt/40 transition-all active:scale-[0.99] cursor-pointer border border-transparent hover:border-divider">
+<div class="flex items-start gap-3.5">
+<!-- Custom Brand Avatar -->
+<div class="relative shrink-0 w-14 h-14 rounded-full bg-accent-fill flex items-center justify-center text-white shadow-sm ring-2 ring-accent-tint">
+<span class="material-symbols-outlined text-[26px]" style="font-variation-settings: 'FILL' 1;">handshake</span>
+</div>
+<!-- Content -->
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1 mb-0.5">
+<div class="flex items-center gap-1.5 truncate">
+<h2 class="font-title text-[16px] text-text-primary font-semibold truncate">Tendo Support</h2>
+<span class="inline-flex items-center px-1.5 py-0.2 rounded bg-accent-tint text-accent-fill font-caption text-[12px] font-bold">OFFICIAL</span>
+</div>
+<time class="font-caption text-caption text-text-tertiary shrink-0">Nov 2</time>
+</div>
+<!-- Promotion Tag -->
+<div class="mb-1.5">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-warning-tint text-warning-text font-caption text-[12px] font-semibold">
+<span class="material-symbols-outlined text-[12px]">local_offer</span>
+                  Promo Offer
+                </span>
+</div>
+<!-- Snippet -->
+<div class="flex items-center justify-between gap-2">
+<p class="font-body text-label text-text-secondary truncate leading-snug">
+                  Your promo SPRING20 is active
+                </p>
+<span class="material-symbols-outlined text-accent-fill text-[16px] shrink-0">bolt</span>
+</div>
+</div>
+</div>
+</article>
+</div>
+<!-- Quick Trust Guarantee Footer Element -->
+<div class="mt-4 p-4 rounded-[20px] bg-surface-alt/70 border border-divider flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-accent-tint flex items-center justify-center text-accent-fill shrink-0">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">security</span>
+</div>
+<div class="flex-1">
+<p class="font-title text-[13px] text-text-primary font-semibold leading-tight">Tendo Guarantee Protects Every Booking</p>
+<p class="font-body text-[12px] text-text-secondary leading-normal">Direct encrypted messaging &amp; verified identity checks.</p>
+</div>
+</div>
+</main>
+<!-- Bottom Tab Bar (Strictly 4 Tabs: Home, Bookings, Inbox [ACTIVE], Profile) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pt-2 pb-6 bg-surface shadow-[0_-4px_20px_rgba(31,12,15,0.05)] border-t border-divider select-none max-w-[393px] mx-auto right-0">
+<!-- 1. Home -->
+<a class="flex flex-col items-center justify-center text-text-secondary hover:text-text-primary px-4 py-1.5 transition-colors group active:scale-95 duration-150" href="#home">
+<span class="material-symbols-outlined text-text-secondary group-hover:text-text-primary mb-0.5">home</span>
+<span class="font-label text-caption">Home</span>
+</a>
+<!-- 2. Bookings -->
+<a class="flex flex-col items-center justify-center text-text-secondary hover:text-text-primary px-4 py-1.5 transition-colors group active:scale-95 duration-150" href="#bookings">
+<span class="material-symbols-outlined text-text-secondary group-hover:text-text-primary mb-0.5">calendar_month</span>
+<span class="font-label text-caption">Bookings</span>
+</a>
+<!-- 3. Inbox (ACTIVE) -->
+<a aria-current="page" class="flex flex-col items-center justify-center text-accent-fill bg-accent-tint rounded-full px-4 py-1.5 transition-all active:scale-95 duration-150" href="#inbox">
+<span class="material-symbols-outlined text-accent-fill mb-0.5" style="font-variation-settings: 'FILL' 1;">chat_bubble</span>
+<span class="font-label text-caption font-semibold">Inbox</span>
+</a>
+<!-- 4. Profile -->
+<a class="flex flex-col items-center justify-center text-text-secondary hover:text-text-primary px-4 py-1.5 transition-colors group active:scale-95 duration-150" href="#profile">
+<span class="material-symbols-outlined text-text-secondary group-hover:text-text-primary mb-0.5">person</span>
+<span class="font-label text-caption">Profile</span>
+</a>
+</nav>
+</div>
+</body></html>

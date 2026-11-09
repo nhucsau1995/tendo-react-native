@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=393, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Provider Mode - Tendo</title>
+  <!-- Google Fonts: Rubik and Young Serif -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&family=Young+Serif&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['"Young Serif"', 'serif'],
+            sans: ['Rubik', 'sans-serif'],
+          },
+          colors: {
+            appbg: '#FCF4F5',
+            ink: '#1F0C0F',
+            'ink-secondary': '#5A4549',
+            'ink-tertiary': '#7A6468',
+            accent: '#E60023',
+            'accent-btn': '#CD001E',
+            'accent-tint': '#FCDBE0',
+            hairline: '#EADADC',
+            'control-border': '#B4898B',
+            'status-green': '#0E7C3A',
+            'status-green-bg': '#E3F4E9',
+          },
+          boxShadow: {
+            tendo: '0 1px 2px rgba(31,12,15,0.04), 0 8px 24px rgba(31,12,15,0.06)',
+            'tendo-sm': '0 1px 3px rgba(31,12,15,0.04), 0 4px 12px rgba(31,12,15,0.05)',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #FCF4F5;
+      color: #1F0C0F;
+      font-family: 'Rubik', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      width: 393px;
+      margin: 0 auto;
+      min-height: 852px;
+      position: relative;
+      overflow-x: hidden;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      font-size: 20px;
+      line-height: 1;
+    }
+    .material-symbols-outlined.fill-1 {
+      font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+  </style>
+</head>
+<body class="bg-appbg pb-12">
+  <!-- Status bar spacer / simulated iOS 393px status bar -->
+  <div class="w-full h-11 px-6 flex justify-between items-center text-[14px] font-semibold tracking-tight text-ink pt-2 select-none">
+    <span>9:41</span>
+    <div class="flex items-center gap-1.5">
+      <span class="material-symbols-outlined !text-[16px]">signal_cellular_4_bar</span>
+      <span class="material-symbols-outlined !text-[16px]">wifi</span>
+      <span class="material-symbols-outlined !text-[18px]">battery_full</span>
+    </div>
+  </div>
+
+  <!-- Header Section -->
+  <header class="px-5 pt-3 pb-3 flex flex-col gap-1.5">
+    <!-- Top row: Switch back to customer mode link & Notification / Settings icons -->
+    <div class="flex items-center justify-between">
+      <a href="#" class="inline-flex items-center gap-1 text-[13px] font-medium text-accent-btn hover:opacity-80 transition-opacity">
+        <span class="material-symbols-outlined !text-[16px]">swap_horiz</span>
+        <span>Switch to customer</span>
+      </a>
+      <div class="flex items-center gap-2">
+        <button class="w-9 h-9 rounded-full bg-white shadow-sm flex items-center justify-center text-ink hover:bg-stone-50 transition-colors">
+          <span class="material-symbols-outlined !text-[19px]">notifications</span>
+        </button>
+        <button class="w-9 h-9 rounded-full bg-white shadow-sm flex items-center justify-center text-ink hover:bg-stone-50 transition-colors">
+          <span class="material-symbols-outlined !text-[19px]">tune</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Title and Online toggle row -->
+    <div class="flex items-center justify-between mt-1">
+      <h1 class="font-display text-[30px] leading-tight text-ink tracking-tight">Provider mode</h1>
+      
+      <!-- Online toggle switch -->
+      <div class="flex items-center gap-2 bg-white px-3 py-1.5 rounded-full shadow-tendo-sm border border-hairline/60">
+        <span class="w-2.5 h-2.5 rounded-full bg-status-green animate-pulse"></span>
+        <span class="text-[13px] font-medium text-status-green">Online</span>
+        <!-- Pill switch toggled on -->
+        <div class="w-9 h-5 bg-status-green rounded-full relative p-0.5 cursor-pointer">
+          <div class="w-4 h-4 bg-white rounded-full shadow-sm ml-auto"></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="px-5 space-y-5 mt-1">
+    <!-- FOCAL: Earnings Card -->
+    <section class="bg-accent-btn text-white rounded-[20px] p-5 shadow-tendo relative overflow-hidden">
+      <!-- Subtle curved ambient decoration in background -->
+      <div class="absolute -right-8 -top-8 w-40 h-40 rounded-full bg-white/5 pointer-events-none"></div>
+      <div class="absolute right-10 -bottom-10 w-32 h-32 rounded-full bg-white/5 pointer-events-none"></div>
+
+      <div class="relative z-10">
+        <div class="flex items-center justify-between text-white/90">
+          <span class="text-[14px] font-medium tracking-wide">This week</span>
+          <div class="flex items-center gap-1 bg-white/15 px-2.5 py-0.5 rounded-full text-[12px] font-medium">
+            <span>Oct 9 – 15</span>
+            <span class="material-symbols-outlined !text-[14px]">calendar_today</span>
+          </div>
+        </div>
+
+        <div class="mt-2.5">
+          <div class="font-display text-[38px] leading-none text-white tracking-tight">
+            $1,284.50
+          </div>
+        </div>
+
+        <div class="mt-3.5 pt-3.5 border-t border-white/15 flex items-center justify-between text-[13px] text-white/90">
+          <div class="flex items-center gap-3">
+            <span class="flex items-center gap-1 font-medium">
+              <span class="material-symbols-outlined !text-[16px] text-white">check_circle</span>
+              18 jobs
+            </span>
+            <span class="w-1 h-1 rounded-full bg-white/40"></span>
+            <span class="flex items-center gap-1 font-medium">
+              <span class="material-symbols-outlined fill-1 !text-[16px] text-amber-300">star</span>
+              4.9 rating
+            </span>
+          </div>
+
+          <a href="#" class="inline-flex items-center gap-0.5 text-[12px] font-medium text-white underline underline-offset-2 hover:opacity-80">
+            <span>Details</span>
+            <span class="material-symbols-outlined !text-[14px]">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: New requests (2) -->
+    <section class="space-y-3">
+      <div class="flex items-center justify-between px-0.5">
+        <div class="flex items-center gap-2">
+          <h2 class="text-[18px] font-semibold text-ink">New requests</h2>
+          <span class="bg-accent-tint text-accent-btn text-[12px] font-semibold px-2 py-0.5 rounded-full">2</span>
+        </div>
+        <span class="text-[12px] text-ink-secondary">Respond promptly</span>
+      </div>
+
+      <!-- Request Card 1: Emma Carter -->
+      <article class="bg-white rounded-[20px] p-4 shadow-tendo border border-hairline/40 space-y-3.5">
+        <div class="flex items-start justify-between">
+          <div class="flex items-center gap-3">
+            <img src="https://lh3.googleusercontent.com/aida/ALJJyrBDBeSl9eyzRxaQ4btjdNS4HS3wPu1sfrVtCBacwfZdV1PdU3ss_YQJrxEMsgtLTpTcoPpQOQxoi1fiYevBxxgj7kkIwi7WVYVnfFMoQ7e7J30hxoPYxm8joh_1nsnqIp_l6mnUkD6sacyhI6AI_L_ewBBjcgqBy9kqa1qa4K74ZmvwPaxdPbyg_eEayeu1BUSVInn3dacPOGIugoEEQ7ImhnI2i9zwODsv6EcvnVck653oqXjYhRN-hGzN5Q" alt="Emma Carter" class="w-12 h-12 rounded-full object-cover ring-2 ring-hairline/60">
+            <div>
+              <div class="flex items-center gap-1.5">
+                <h3 class="text-[16px] font-semibold text-ink">Emma Carter</h3>
+                <span class="bg-accent-tint text-accent-btn text-[12px] font-medium px-2 py-0.5 rounded-full">Repeat client</span>
+              </div>
+              <p class="text-[13px] text-ink-secondary font-medium">Deep clean</p>
+            </div>
+          </div>
+          <div class="text-right">
+            <span class="font-display text-[22px] text-ink font-semibold">$140</span>
+            <span class="block text-[12px] text-ink-tertiary">Est. 4 hrs</span>
+          </div>
+        </div>
+
+        <!-- Job metadata chips / info -->
+        <div class="bg-appbg/70 rounded-[14px] p-2.5 flex items-center justify-between text-[12px] text-ink-secondary">
+          <div class="flex items-center gap-1.5">
+            <span class="material-symbols-outlined !text-[16px] text-accent-btn">calendar_month</span>
+            <span class="font-medium text-ink">Sat, Nov 14, 10:00 AM</span>
+          </div>
+          <div class="flex items-center gap-1">
+            <span class="material-symbols-outlined !text-[16px] text-ink-tertiary">near_me</span>
+            <span>1.2 mi away</span>
+          </div>
+        </div>
+
+        <!-- Action buttons side by side -->
+        <div class="grid grid-cols-2 gap-2.5 pt-0.5">
+          <!-- Decline: secondary pill -->
+          <button class="h-11 rounded-full border border-control-border bg-white text-ink text-[14px] font-medium hover:bg-stone-50 active:scale-95 transition-all flex items-center justify-center">
+            Decline
+          </button>
+          <!-- Accept: primary pill -->
+          <button class="h-11 rounded-full bg-accent-btn text-white text-[14px] font-medium hover:bg-[#ca001f] shadow-sm active:scale-95 transition-all flex items-center justify-center">
+            Accept
+          </button>
+        </div>
+      </article>
+
+      <!-- Request Card 2: Noah Bennett -->
+      <article class="bg-white rounded-[20px] p-4 shadow-tendo border border-hairline/40 space-y-3.5">
+        <div class="flex items-start justify-between">
+          <div class="flex items-center gap-3">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZObeyA3GsUmP7XFu1PTygjhkF36XqFezF22xT-0rIAsFDbbM7vNEmJcl0HjMxhgozpnXfYoxkuzEVjzRgU6-c_Io7B-mOYbO5iBA3_TAQTP-4K6ANMMy7CDH_RNo6sCGf2C9v1KwpUu8t6TBQdVkC1nAM9n-IsloXP4zSNWs6CiOMjEqyJHthmrszZ1JoA_a5bT-ik9W__xVL3cJQS8VxTp9OXTLpD_hVX5a-8zJeYsaFKakKeSHS455tMXyZ3W1PvohdSoAzXFoJ6w" alt="Noah Bennett" class="w-12 h-12 rounded-full object-cover ring-2 ring-hairline/60">
+            <div>
+              <div class="flex items-center gap-1.5">
+                <h3 class="text-[16px] font-semibold text-ink">Noah Bennett</h3>
+                <span class="bg-emerald-50 text-status-green text-[12px] font-medium px-2 py-0.5 rounded-full">New client</span>
+              </div>
+              <p class="text-[13px] text-ink-secondary font-medium">Standard clean</p>
+            </div>
+          </div>
+          <div class="text-right">
+            <span class="font-display text-[22px] text-ink font-semibold">$70</span>
+            <span class="block text-[12px] text-ink-tertiary">Est. 2 hrs</span>
+          </div>
+        </div>
+
+        <!-- Job metadata chips / info -->
+        <div class="bg-appbg/70 rounded-[14px] p-2.5 flex items-center justify-between text-[12px] text-ink-secondary">
+          <div class="flex items-center gap-1.5">
+            <span class="material-symbols-outlined !text-[16px] text-accent-btn">calendar_month</span>
+            <span class="font-medium text-ink">Sun, Nov 15, 1:00 PM</span>
+          </div>
+          <div class="flex items-center gap-1">
+            <span class="material-symbols-outlined !text-[16px] text-ink-tertiary">near_me</span>
+            <span>2.6 mi away</span>
+          </div>
+        </div>
+
+        <!-- Action buttons side by side -->
+        <div class="grid grid-cols-2 gap-2.5 pt-0.5">
+          <!-- Decline: secondary pill -->
+          <button class="h-11 rounded-full border border-control-border bg-white text-ink text-[14px] font-medium hover:bg-stone-50 active:scale-95 transition-all flex items-center justify-center">
+            Decline
+          </button>
+          <!-- Accept: primary pill -->
+          <button class="h-11 rounded-full bg-accent-btn text-white text-[14px] font-medium hover:bg-[#ca001f] shadow-sm active:scale-95 transition-all flex items-center justify-center">
+            Accept
+          </button>
+        </div>
+      </article>
+    </section>
+
+    <!-- Section: Today -->
+    <section class="space-y-2.5 pb-2">
+      <div class="flex items-center justify-between px-0.5">
+        <h2 class="text-[18px] font-semibold text-ink">Today</h2>
+        <span class="text-[12px] font-medium text-ink-tertiary">1 scheduled</span>
+      </div>
+
+      <!-- Schedule row: Liam Chen -->
+      <div class="bg-white rounded-[20px] p-3.5 shadow-tendo border border-hairline/40 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDobxgMCQ9P8MLPFta-q64qlgnPskN3Ckbm0Y2DfEq6MhyYQn1J6kLx14uMUGCVN9l0bmC9J_hTGVJVsOnHEqOKOiGlfsCRUsu5yxGPYLon3PDgjfZe67In9HNiK0fP3u3irbT8xg9Y8G-pVuueca6qplSkf2AdKpzGoe5brh1SuzQG1VU1O5P-0bplzUoLPt_tHRGSOsQ95S9qVMh8vE6VOhlug47I_8qG1r8QchaT4bMMjebPevR4Q8CFnrkz6uvEm-bVofZoKyb37A" alt="Liam Chen" class="w-12 h-12 rounded-full object-cover ring-2 ring-hairline/60">
+          <div>
+            <div class="flex items-center gap-2">
+              <h3 class="text-[15px] font-semibold text-ink">Liam Chen</h3>
+              <span class="inline-flex items-center gap-0.5 text-[12px] font-medium text-status-green bg-status-green-bg px-2 py-0.5 rounded-full">
+                <span class="w-1.5 h-1.5 rounded-full bg-status-green"></span>
+                Confirmed
+              </span>
+            </div>
+            <p class="text-[13px] text-ink-secondary mt-0.5">Move-out clean • 3:00 PM</p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <button class="w-9 h-9 rounded-full bg-appbg flex items-center justify-center text-accent-btn hover:bg-accent-tint/50 transition-colors">
+            <span class="material-symbols-outlined !text-[18px]">chat</span>
+          </button>
+          <button class="w-9 h-9 rounded-full bg-appbg flex items-center justify-center text-ink-secondary hover:bg-stone-200/60 transition-colors">
+            <span class="material-symbols-outlined !text-[18px]">navigation</span>
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

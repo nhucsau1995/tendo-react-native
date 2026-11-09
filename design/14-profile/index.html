@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tendo - Profile</title>
+<!-- Google Fonts: Young Serif & Rubik -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&amp;family=Young+Serif&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-primary-fixed-variant": "#930012",
+            "support-strong": "#38A685",
+            "surface-dim": "#f4d2cf",
+            "surface-container-high": "#ffe2df",
+            "secondary-fixed": "#8bf6d4",
+            "outline-variant": "#e7bdb9",
+            "tertiary": "#005085",
+            "inverse-surface": "#402b2a",
+            "secondary-fixed-dim": "#6ed9b9",
+            "on-secondary-fixed-variant": "#00513f",
+            "surface-container": "#ffe9e7",
+            "primary": "#a00015",
+            "surface": "#FFFFFF",
+            "surface-container-highest": "#fddbd8",
+            "primary-fixed": "#ffdad7",
+            "surface-tint": "#c0001b",
+            "inverse-on-surface": "#ffedeb",
+            "error": "#ba1a1a",
+            "text-primary": "#1F0C0F",
+            "accent-tint": "#FCDBE0",
+            "on-tertiary-fixed": "#001d35",
+            "danger-tint": "#F7E4E4",
+            "surface-bright": "#fff8f7",
+            "text-tertiary": "#7A6468",
+            "tertiary-fixed": "#d0e4ff",
+            "on-primary-fixed": "#410004",
+            "text-secondary": "#5A4549",
+            "surface-container-low": "#fff0ef",
+            "surface-alt": "#F8EAEC",
+            "primary-container": "#cd001e",
+            "inverse-primary": "#ffb3ad",
+            "on-tertiary": "#ffffff",
+            "accent-fill": "#CD001E",
+            "warning-text": "#A75906",
+            "success-text": "#0E7C3A",
+            "tertiary-container": "#0069ac",
+            "on-secondary-fixed": "#002118",
+            "on-primary-container": "#ffdcd8",
+            "on-error-container": "#93000a",
+            "on-background": "#291715",
+            "secondary-container": "#88f3d1",
+            "on-primary": "#ffffff",
+            "success-tint": "#E3F4E9",
+            "surface-variant": "#fddbd8",
+            "amber-star": "#D97706",
+            "on-tertiary-fixed-variant": "#00497b",
+            "on-surface-variant": "#5d3f3d",
+            "primary-fixed-dim": "#ffb3ad",
+            "tertiary-fixed-dim": "#9ccaff",
+            "surface-container-lowest": "#ffffff",
+            "on-secondary": "#ffffff",
+            "error-container": "#ffdad6",
+            "on-error": "#ffffff",
+            "on-secondary-container": "#007059",
+            "info-text": "#CD001E",
+            "outline": "#926f6b",
+            "on-surface": "#291715",
+            "danger-text": "#B91C1C",
+            "secondary": "#006b55",
+            "warning-tint": "#FAEFE1",
+            "on-tertiary-container": "#d2e5ff",
+            "info-tint": "#F9E0E4",
+            "control-border": "#B4898B",
+            "background": "#FCF4F5",
+            "divider": "#EADADC",
+            "accent-pressed": "#CA001F"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "2xl": "1.25rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xl": "1.5rem",
+            "space-2xl": "2rem",
+            "margin": "1.25rem",
+            "gutter": "1rem",
+            "space-md": "0.75rem",
+            "space-sm": "0.5rem",
+            "space-xs": "0.25rem",
+            "space-lg": "1rem"
+          },
+          "fontFamily": {
+            "display": ["Young Serif"],
+            "body": ["Rubik"],
+            "caption": ["Rubik"],
+            "title": ["Rubik"],
+            "label": ["Rubik"]
+          },
+          "fontSize": {
+            "display": [
+              "32px",
+              {
+                "lineHeight": "40px",
+                "letterSpacing": "-0.01em",
+                "fontWeight": "400"
+              }
+            ],
+            "body": [
+              "16px",
+              {
+                "lineHeight": "24px",
+                "fontWeight": "400"
+              }
+            ],
+            "caption": [
+              "13px",
+              {
+                "lineHeight": "18px",
+                "fontWeight": "500"
+              }
+            ],
+            "title": [
+              "20px",
+              {
+                "lineHeight": "28px",
+                "fontWeight": "600"
+              }
+            ],
+            "label": [
+              "14px",
+              {
+                "lineHeight": "20px",
+                "fontWeight": "500"
+              }
+            ]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .material-symbols-fill {
+      font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    body {
+      -webkit-font-smoothing: antialiased;
+      background-color: #EDE3E5;
+    }
+  </style>
+</head>
+<body class="flex justify-center min-h-screen text-text-primary selection:bg-accent-tint selection:text-accent-fill">
+<!-- Mobile Simulator Frame (393px width) -->
+<div class="relative w-full max-w-[393px] min-h-[852px] bg-background shadow-2xl flex flex-col overflow-x-hidden pb-28">
+<!-- iOS Status Bar -->
+<div class="w-full h-11 px-6 pt-3 flex justify-between items-center text-text-primary z-40 select-none">
+<span class="font-title text-caption tracking-tight font-semibold">9:41</span>
+<div class="flex items-center gap-1.5 text-text-primary">
+<span class="material-symbols-outlined text-[17px]">signal_cellular_alt</span>
+<span class="material-symbols-outlined text-[17px]">wifi</span>
+<span class="material-symbols-outlined text-[20px]">battery_full</span>
+</div>
+</div>
+<!-- Top App Bar / Header -->
+<header class="w-full px-5 pt-3 pb-2 flex justify-between items-center z-30">
+<h1 class="font-display text-display text-text-primary">Profile</h1>
+<button aria-label="Settings" class="w-10 h-10 rounded-full bg-surface shadow-[0_2px_8px_rgba(31,12,15,0.06)] flex items-center justify-center text-text-secondary hover:text-text-primary active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[21px]">settings</span>
+</button>
+</header>
+<!-- Main Content Container -->
+<main class="w-full px-5 pt-2 flex flex-col gap-4">
+<!-- Profile Summary Card -->
+<section class="w-full bg-surface rounded-2xl p-4 shadow-[0_2px_12px_rgba(31,12,15,0.04)] flex items-center gap-4 border border-divider/40">
+<div class="relative w-[72px] h-[72px] rounded-full overflow-hidden flex-shrink-0 ring-2 ring-accent-tint/80 shadow-sm">
+<img alt="Emma Carter" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmfZJ1dXdv9kYlIHtfCQ8kuhDXNsWxVvWGKGmaHkI_L7CEOo4dYTN9Ypqn05XkeTmlWMbfbgWYdy8MV9VR3BH3I8wzmKokteRyNeFjJZDQPXeL2FCkK8Q22Tem20tUs2A8ri_Ywu2xRX1dU6kTDl6DxXUqY3X7FsC3Z8V9lDDnNMyJ68jT5GFSS9-xgX5WX1XTxLpLXXIki6nGc8phCP4xcx7w_RDDP446EwR5887YtB1gNsS9JGUP1xzi8jbH3Wz0sE803aKq9-SQ6Q"/>
+</div>
+<div class="flex flex-col flex-grow min-w-0">
+<div class="flex items-center justify-between">
+<h2 class="font-title text-title text-text-primary truncate">Emma Carter</h2>
+<button aria-label="Edit Profile" class="text-text-tertiary hover:text-accent-fill p-1 -mr-1 transition-colors">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+</div>
+<p class="font-label text-label text-text-secondary truncate mt-0.5">emma.carter@mail.com</p>
+<div class="flex items-center gap-1.5 mt-1.5">
+<span class="inline-flex items-center gap-1 bg-surface-alt text-text-tertiary font-caption text-[12px] px-2 py-0.5 rounded-full font-medium">
+<span class="material-symbols-outlined text-[13px] text-accent-fill">verified</span>
+              Member since 2024
+            </span>
+</div>
+</div>
+</section>
+<!-- Bold Crimson Focal Element Card: Earn with Tendo -->
+<section class="relative w-full bg-accent-fill rounded-2xl p-5 shadow-[0_8px_24px_rgba(205,0,30,0.22)] text-white overflow-hidden">
+<!-- Ambient decorative curve -->
+<div class="absolute -right-12 -bottom-12 w-40 h-40 bg-white/10 rounded-full blur-2xl pointer-events-none"></div>
+<div class="absolute -left-10 -top-10 w-32 h-32 bg-white/5 rounded-full blur-xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col gap-2.5">
+<div class="flex items-center justify-between">
+<div class="inline-flex items-center gap-1.5 bg-white/20 backdrop-blur-md px-2.5 py-1 rounded-full text-[12px] font-caption tracking-wide uppercase font-semibold text-white">
+<span class="material-symbols-outlined text-[14px] text-white">auto_awesome</span>
+<span>Tendo Pro Partner</span>
+</div>
+<span class="material-symbols-outlined text-white/50 text-xl">handyman</span>
+</div>
+<div>
+<h3 class="font-display text-[22px] leading-tight text-white">Earn with Tendo</h3>
+<p class="font-body text-label text-white/90 mt-1 leading-snug">
+              Switch to provider mode to accept local jobs &amp; build your business.
+            </p>
+</div>
+<button class="mt-1 w-full bg-white text-accent-fill hover:bg-surface-bright active:scale-[0.98] transition-all rounded-full h-12 px-5 flex items-center justify-center gap-2 font-label text-label font-semibold shadow-sm">
+<span>Switch to provider</span>
+<span class="material-symbols-outlined text-[19px]">arrow_forward</span>
+</button>
+</div>
+</section>
+<!-- Settings List Card -->
+<section class="w-full bg-surface rounded-2xl shadow-[0_2px_12px_rgba(31,12,15,0.04)] border border-divider/40 overflow-hidden divide-y divide-divider/70">
+<!-- Item 1: Saved Addresses -->
+<a class="flex items-center justify-between p-3.5 hover:bg-surface-alt/50 active:bg-surface-alt transition-colors group" href="#addresses">
+<div class="flex items-center gap-3.5 min-w-0">
+<div class="w-10 h-10 rounded-xl bg-accent-tint/60 text-accent-fill flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[22px]">location_on</span>
+</div>
+<div class="flex flex-col text-left truncate">
+<span class="font-label text-label text-text-primary font-medium">Saved addresses</span>
+<span class="font-caption text-caption text-text-tertiary">Home &amp; Work (2)</span>
+</div>
+</div>
+<div class="flex items-center gap-1 text-control-border">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</div>
+</a>
+<!-- Item 2: Payment Methods -->
+<a class="flex items-center justify-between p-3.5 hover:bg-surface-alt/50 active:bg-surface-alt transition-colors group" href="#payments">
+<div class="flex items-center gap-3.5 min-w-0">
+<div class="w-10 h-10 rounded-xl bg-accent-tint/60 text-accent-fill flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[22px]">credit_card</span>
+</div>
+<div class="flex flex-col text-left truncate">
+<span class="font-label text-label text-text-primary font-medium">Payment methods</span>
+<div class="flex items-center gap-1.5 font-caption text-caption text-text-tertiary">
+<span class="inline-block w-2 h-2 rounded-full bg-support-strong"></span>
+<span>Visa ending in 4242</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-1 text-control-border">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</div>
+</a>
+<!-- Item 3: Notifications -->
+<a class="flex items-center justify-between p-3.5 hover:bg-surface-alt/50 active:bg-surface-alt transition-colors group" href="#notifications">
+<div class="flex items-center gap-3.5 min-w-0">
+<div class="w-10 h-10 rounded-xl bg-accent-tint/60 text-accent-fill flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[22px]">notifications</span>
+</div>
+<div class="flex flex-col text-left truncate">
+<span class="font-label text-label text-text-primary font-medium">Notifications</span>
+<span class="font-caption text-caption text-text-tertiary">Push &amp; SMS enabled</span>
+</div>
+</div>
+<div class="flex items-center gap-1 text-control-border">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</div>
+</a>
+<!-- Item 4: Promo Codes -->
+<a class="flex items-center justify-between p-3.5 hover:bg-surface-alt/50 active:bg-surface-alt transition-colors group" href="#promos">
+<div class="flex items-center gap-3.5 min-w-0">
+<div class="w-10 h-10 rounded-xl bg-accent-tint/60 text-accent-fill flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[22px]">local_activity</span>
+</div>
+<div class="flex flex-col text-left truncate">
+<span class="font-label text-label text-text-primary font-medium">Promo codes</span>
+<div class="flex items-center gap-1.5">
+<span class="inline-block px-1.5 py-0.5 rounded bg-warning-tint text-warning-text font-caption text-[12px] font-semibold">SPRING20</span>
+<span class="font-caption text-caption text-text-tertiary truncate">1 active offer</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-1 text-control-border">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</div>
+</a>
+<!-- Item 5: Help Center -->
+<a class="flex items-center justify-between p-3.5 hover:bg-surface-alt/50 active:bg-surface-alt transition-colors group" href="#help">
+<div class="flex items-center gap-3.5 min-w-0">
+<div class="w-10 h-10 rounded-xl bg-accent-tint/60 text-accent-fill flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[22px]">support_agent</span>
+</div>
+<div class="flex flex-col text-left truncate">
+<span class="font-label text-label text-text-primary font-medium">Help center</span>
+<span class="font-caption text-caption text-text-tertiary">24/7 support &amp; FAQs</span>
+</div>
+</div>
+<div class="flex items-center gap-1 text-control-border">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</div>
+</a>
+</section>
+<!-- Destructive Action Row: Log Out -->
+<section class="w-full">
+<button class="w-full bg-surface rounded-2xl p-3.5 flex items-center justify-between shadow-[0_2px_8px_rgba(31,12,15,0.03)] border border-danger-tint/60 hover:bg-danger-tint/20 active:scale-[0.99] transition-all">
+<div class="flex items-center gap-3.5">
+<div class="w-10 h-10 rounded-xl bg-danger-tint flex items-center justify-center text-danger-text">
+<span class="material-symbols-outlined text-[22px]">logout</span>
+</div>
+<span class="font-label text-label font-semibold text-danger-text">Log out</span>
+</div>
+<span class="material-symbols-outlined text-[20px] text-danger-text/70">chevron_right</span>
+</button>
+</section>
+<!-- Version note -->
+<div class="w-full text-center py-1">
+<p class="font-caption text-caption text-text-tertiary/70 text-[12px]">Tendo v2.14.0 (Build 492) • Privacy &amp; Terms</p>
+</div>
+</main>
+<!-- Shared BottomNavBar Component -->
+<!-- Destination 4: Profile is ACTIVE -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pt-2 pb-6 max-w-[393px] mx-auto right-0 bg-surface shadow-[0_-4px_20px_rgba(31,12,15,0.05)] border-t border-divider">
+<!-- Tab 1: Home -->
+<a class="flex flex-col items-center justify-center text-text-secondary hover:text-text-primary px-4 py-1.5 transition-colors group" href="#home">
+<span class="material-symbols-outlined text-[24px]">home</span>
+<span class="font-label text-caption mt-0.5">Home</span>
+</a>
+<!-- Tab 2: Bookings -->
+<a class="flex flex-col items-center justify-center text-text-secondary hover:text-text-primary px-4 py-1.5 transition-colors group" href="#bookings">
+<span class="material-symbols-outlined text-[24px]">calendar_month</span>
+<span class="font-label text-caption mt-0.5">Bookings</span>
+</a>
+<!-- Tab 3: Inbox -->
+<a class="flex flex-col items-center justify-center text-text-secondary hover:text-text-primary px-4 py-1.5 transition-colors group relative" href="#inbox">
+<span class="material-symbols-outlined text-[24px]">chat_bubble</span>
+<span class="font-label text-caption mt-0.5">Inbox</span>
+</a>
+<!-- Tab 4: Profile (ACTIVE) -->
+<a class="flex flex-col items-center justify-center text-accent-fill bg-accent-tint rounded-full px-4 py-1.5 transition-all" href="#profile">
+<span class="material-symbols-outlined text-[24px] material-symbols-fill">person</span>
+<span class="font-label text-caption font-semibold mt-0.5">Profile</span>
+</a>
+</nav>
+<!-- iOS Home Indicator -->
+<div class="fixed bottom-1 left-0 right-0 max-w-[393px] mx-auto flex justify-center items-center z-50 pointer-events-none">
+<div class="w-32 h-1 bg-text-primary/20 rounded-full"></div>
+</div>
+</div>
+</body></html>
