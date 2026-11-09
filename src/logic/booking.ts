@@ -50,7 +50,7 @@ export function filterProviders(list: Provider[], categoryId: string, f: Filters
   return list
     .filter((p) => p.categoryId === categoryId)
     .filter((p) => (!f.availableToday || p.availableToday) && (!f.topRated || p.rating >= 4.8) && (!f.under40 || p.rate < 40) && (!f.eco || p.eco))
-    .sort((a, b) => b.rating * 100 - b.distance - (a.rating * 100 - a.distance));
+    .sort((a, b) => b.rating - a.rating || b.reviews - a.reviews || a.distance - b.distance);
 }
 
 export function searchProviders(list: Provider[], q: string): Provider[] {

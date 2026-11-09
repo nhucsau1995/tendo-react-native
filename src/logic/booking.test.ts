@@ -30,10 +30,12 @@ const p = (id: string, rating: number, rate: number, today: boolean, eco: boolea
   eco, years: 1, jobs: 1, onTime: 90, avatar: 'avatarMaria', work: [], packages: [], review: { author: '', stars: 5, text: '', when: '' },
 });
 
-test('filters combine and best rating sorts first', () => {
+test('filters combine; best rating, then most reviews, sorts first', () => {
   const list = [p('a', 4.7, 30, false, true), p('b', 4.9, 35, true, true), p('c', 4.8, 45, true, false)];
   const none = { availableToday: false, topRated: false, under40: false, eco: false };
   assert.deepEqual(filterProviders(list, 'cleaning', none).map((x) => x.id), ['b', 'c', 'a']);
   assert.deepEqual(filterProviders(list, 'cleaning', { ...none, availableToday: true, under40: true }).map((x) => x.id), ['b']);
   assert.equal(filterProviders(list, 'plumbing', none).length, 0);
+  const tie = [{ ...p('near', 4.9, 40, true, true, 0.8), reviews: 130 }, { ...p('busy', 4.9, 35, true, true, 1.2), reviews: 212 }];
+  assert.equal(filterProviders(tie, 'cleaning', none)[0].id, 'busy');
 });
