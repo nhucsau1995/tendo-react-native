@@ -47,7 +47,19 @@ jobs:
           cd android
           # x86_64 only: the emulator is x86_64, and building all 4 ABIs took most of the 16-23 min build.
           build() { ./gradlew assembleRelease --no-daemon -q --build-cache --parallel -PreactNativeArchitectures=x86_64; }
-          build || { echo "gradle failed, retrying once in 30 s"; sleep 30; build; }
+          # services.gradle.org returned 504 for the distribution zip in runs 1-2 (its .sha256 still
+          # answered). On failure, fetch the same zip from a mirror; the wrapper checks it against
+          # the official SHA-256, so a tampered or wrong file fails the build instead of running.
+          use_mirror() {
+            local props=gradle/wrapper/gradle-wrapper.properties v sum
+            v=$(sed -n 's/^distributionUrl=.*gradle-\([0-9.]*\)-bin\.zip$/\1/p' "$props")
+            sum=$(curl -fsSL --retry 3 "https://services.gradle.org/distributions/gradle-$v-bin.zip.sha256")
+            [ "${#sum}" -eq 64 ] || { echo "no official checksum for gradle $v"; return 1; }
+            sed -i "s#^distributionUrl=.*#distributionUrl=https\\://mirrors.cloud.tencent.com/gradle/gradle-$v-bin.zip#" "$props"
+            grep -q '^distributionSha256Sum=' "$props" && sed -i "s/^distributionSha256Sum=.*/distributionSha256Sum=$sum/" "$props" || echo "distributionSha256Sum=$sum" >> "$props"
+            cat "$props"
+          }
+          build || { echo "gradle failed, retrying from a mirror with the official checksum"; use_mirror; build; }
           ls -la app/build/outputs/apk/release/
 
       - name: Install ffmpeg (not preinstalled on ubuntu-latest)
