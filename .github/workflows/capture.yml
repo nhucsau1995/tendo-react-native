@@ -41,8 +41,13 @@ jobs:
         run: |
           set -euo pipefail
           npx expo prebuild --platform android --no-install
+          # The wrapper's 10 s download timeout failed run 1 (services.gradle.org read timeout): give it
+          # 2 min and retry the build once on a network error.
+          sed -i 's/^networkTimeout=.*/networkTimeout=120000/' android/gradle/wrapper/gradle-wrapper.properties
+          cd android
           # x86_64 only: the emulator is x86_64, and building all 4 ABIs took most of the 16-23 min build.
-          cd android && ./gradlew assembleRelease --no-daemon -q --build-cache --parallel -PreactNativeArchitectures=x86_64
+          build() { ./gradlew assembleRelease --no-daemon -q --build-cache --parallel -PreactNativeArchitectures=x86_64; }
+          build || { echo "gradle failed, retrying once in 30 s"; sleep 30; build; }
           ls -la app/build/outputs/apk/release/
 
       - name: Install ffmpeg (not preinstalled on ubuntu-latest)
