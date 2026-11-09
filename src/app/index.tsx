@@ -14,11 +14,11 @@ export default function Welcome() {
   const { height } = useWindowDimensions();
   const insets = useSafeAreaInsets();
   const signIn = useStore((s) => s.signIn);
-  const heroH = Math.round(height * 0.5);
+  const heroH = Math.round(height * 0.46);
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }} testID="screen-welcome">
-      <View style={{ height: heroH }}>
-        <Image source={images.welcomeHero} style={StyleSheet.absoluteFill} resizeMode="cover" />
+      <View style={{ height: heroH, overflow: 'hidden' }}>
+        <Image source={images.welcomeHero} style={{ width: '100%', height: heroH }} resizeMode="cover" />
         <LinearGradient colors={['rgba(252,244,245,0)', colors.bg]} style={styles.fade} />
       </View>
       <View style={[styles.body, { paddingBottom: Math.max(insets.bottom, 16) }]}>
@@ -54,8 +54,8 @@ export default function Welcome() {
 }
 
 const styles = StyleSheet.create({
-  fade: { position: 'absolute', left: 0, right: 0, bottom: 0, height: 140 },
-  body: { flex: 1, paddingHorizontal: 20, marginTop: -24 },
+  fade: { position: 'absolute', left: 0, right: 0, bottom: 0, height: 120 },
+  body: { flex: 1, paddingHorizontal: 20, paddingTop: 4 },
   brand: { flexDirection: 'row', alignItems: 'center', gap: 8 },
   mark: { width: 28, height: 28, borderRadius: 8, backgroundColor: colors.accentFill, alignItems: 'center', justifyContent: 'center' },
   chips: { flexDirection: 'row', flexWrap: 'wrap', gap: 8, marginTop: 16 },

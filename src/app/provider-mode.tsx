@@ -23,30 +23,29 @@ export default function ProviderMode() {
   const earned = providerWeek.earnings + accepted.reduce((n, r) => n + r.price, 0);
   return (
     <Screen testID="screen-provider-mode">
-      <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6 }}>
-        <Icon name="repeat" size={16} color={colors.accentFill} />
-        <T
-          variant="label"
-          testID="switch-customer"
-          style={{ color: colors.accentFill, fontFamily: font.semibold }}
-          onPress={() => {
-            setRole('customer');
-            if (router.canGoBack()) router.back();
-            else router.replace('/home');
-          }}
-        >
-          Switch to customer
-        </T>
-      </View>
       <View style={styles.head}>
-        <T variant="display" style={{ flex: 1 }}>Provider mode</T>
+        <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6, flex: 1 }}>
+          <Icon name="repeat" size={16} color={colors.accentFill} />
+          <T
+            variant="label"
+            testID="switch-customer"
+            style={{ color: colors.accentFill, fontFamily: font.semibold }}
+            onPress={() => {
+              setRole('customer');
+              if (router.canGoBack()) router.back();
+              else router.replace('/home');
+            }}
+          >
+            Switch to customer
+          </T>
+        </View>
         <View style={styles.toggle}>
           <View style={[styles.onDot, !online && { backgroundColor: colors.text3 }]} />
           <T variant="label" style={{ color: online ? colors.success : colors.text2, fontFamily: font.semibold }}>{online ? 'Online' : 'Offline'}</T>
           <Switch value={online} onValueChange={setOnline} trackColor={{ true: colors.success, false: colors.borderStrong }} thumbColor={colors.white} testID="online-toggle" />
         </View>
       </View>
-
+      <T variant="display" style={{ marginTop: 12 }}>Provider mode</T>
       <View style={styles.earn}>
         <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
           <T variant="label" style={{ color: colors.white }}>This week</T>
@@ -116,7 +115,7 @@ export default function ProviderMode() {
 }
 
 const styles = StyleSheet.create({
-  head: { flexDirection: 'row', alignItems: 'center', gap: 8, marginTop: 8 },
+  head: { flexDirection: 'row', alignItems: 'center', gap: 8 },
   toggle: { flexDirection: 'row', alignItems: 'center', gap: 6, backgroundColor: colors.surface, borderRadius: radius.pill, paddingLeft: 12, paddingRight: 4, height: 44, ...shadow },
   onDot: { width: 8, height: 8, borderRadius: 4, backgroundColor: colors.success },
   earn: { marginTop: 16, backgroundColor: colors.accentFill, borderRadius: radius.card, padding: 20, ...shadow },
