@@ -1,0 +1,113 @@
+# Stills for the README: one per key screen, taken at the top of each screen once its content
+# is visible. Real taps on testIDs (no deep links). No clearState: the warm-up launch reset it.
+appId: com.tendo.app
+---
+- launchApp
+- runFlow:
+    when:
+      visible: ".*isn't responding.*"
+    commands:
+      - tapOn: "Wait"
+- extendedWaitUntil:
+    visible: "Get started"
+    timeout: 60000
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: 01-welcome
+- tapOn:
+    id: "have-account"
+- extendedWaitUntil:
+    visible: "Hi Emma"
+    timeout: 15000
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: 02-home
+- tapOn:
+    id: "cat-cleaning"
+- extendedWaitUntil:
+    visible: "Best match"
+    timeout: 15000
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: 03-search-results
+- tapOn:
+    id: "pro-maria"
+- extendedWaitUntil:
+    visible: "ID verified"
+    timeout: 15000
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: 04-provider-profile
+- tapOn:
+    id: "book-pro"
+- extendedWaitUntil:
+    visible: "Step 1 of 2"
+    timeout: 15000
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: 05-book-service
+- tapOn:
+    id: "to-checkout"
+- extendedWaitUntil:
+    visible: "Step 2 of 2"
+    timeout: 15000
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: 06-checkout
+- tapOn:
+    id: "confirm-booking"
+- extendedWaitUntil:
+    visible: "Waiting for Maria"
+    timeout: 15000
+- tapOn:
+    id: "simulate-step"
+- extendedWaitUntil:
+    visible: "Maria accepted"
+    timeout: 15000
+- tapOn:
+    id: "simulate-step"
+- extendedWaitUntil:
+    visible: "Maria is on the way"
+    timeout: 15000
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: 07-booking-tracking
+- tapOn:
+    id: "open-chat"
+- extendedWaitUntil:
+    visible: ".*see you Saturday.*"
+    timeout: 15000
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: 08-chat
+- tapOn:
+    id: "back"
+- extendedWaitUntil:
+    visible: "Maria is on the way"
+    timeout: 15000
+- tapOn:
+    id: "back"
+- extendedWaitUntil:
+    visible: "Hi Emma"
+    timeout: 15000
+- tapOn:
+    id: "tab-bookings"
+- extendedWaitUntil:
+    visible: "NEXT BOOKING"
+    timeout: 15000
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: 09-bookings
+- tapOn:
+    id: "tab-profile"
+- extendedWaitUntil:
+    visible: "Earn with Tendo"
+    timeout: 15000
+- tapOn:
+    id: "switch-provider"
+- extendedWaitUntil:
+    visible: "New requests.*"
+    timeout: 15000
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: 10-provider-mode

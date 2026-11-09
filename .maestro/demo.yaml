@@ -1,0 +1,68 @@
+# Paced walkthrough for screenshots/demo.gif: 10 taps, about 30 s of script. Maestro records
+# the screen itself (startRecording after the welcome screen is up), so JVM start-up and the
+# dialog guard are not in the video. No clearState: the warm-up launch already reset the app.
+appId: com.tendo.app
+---
+- launchApp
+- runFlow:
+    when:
+      visible: ".*isn't responding.*"
+    commands:
+      - tapOn: "Wait"
+- extendedWaitUntil:
+    visible: "Get started"
+    timeout: 60000
+- startRecording: demo
+- tapOn:
+    id: "have-account"
+- extendedWaitUntil:
+    visible: "Hi Emma"
+    timeout: 15000
+- tapOn:
+    id: "cat-cleaning"
+- extendedWaitUntil:
+    visible: "Best match"
+    timeout: 15000
+- tapOn:
+    id: "pro-maria"
+- extendedWaitUntil:
+    visible: "ID verified"
+    timeout: 15000
+- tapOn:
+    id: "book-pro"
+- extendedWaitUntil:
+    visible: "Step 1 of 2"
+    timeout: 15000
+- tapOn:
+    id: "to-checkout"
+- extendedWaitUntil:
+    visible: "Step 2 of 2"
+    timeout: 15000
+- tapOn:
+    id: "confirm-booking"
+- extendedWaitUntil:
+    visible: "Waiting for Maria"
+    timeout: 15000
+- tapOn:
+    id: "simulate-step"
+- extendedWaitUntil:
+    visible: "Maria accepted"
+    timeout: 15000
+- tapOn:
+    id: "simulate-step"
+- extendedWaitUntil:
+    visible: "Maria is on the way"
+    timeout: 15000
+- tapOn:
+    id: "open-chat"
+- extendedWaitUntil:
+    visible: ".*see you Saturday.*"
+    timeout: 15000
+- tapOn:
+    id: "quick-0"
+- extendedWaitUntil:
+    visible: "You are welcome!"
+    timeout: 15000
+- waitForAnimationToEnd:
+    timeout: 2000
+- stopRecording
